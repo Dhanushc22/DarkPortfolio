@@ -6613,7 +6613,7 @@
                 ts.assetsPath,
                 ts.rendererSettings;
                 var tL = tg(ts, tE)
-                  , tF = tv(tr.useState(!1), 2)
+                  , tF = tv(tr.useState(!0), 2)
                   , tP = tF[0]
                   , tR = tF[1]
                   , tM = tr.useRef()
@@ -23079,7 +23079,7 @@
               , tm = (0,
             th.useRef)(null)
               , [tv,tw] = (0,
-            th.useState)(!1)
+            th.useState)(!0)
               , [t_,tC] = (0,
             th.useState)("true")
               , [tE,tA] = (0,
@@ -23161,8 +23161,7 @@
                 if (tv || (setTimeout( () => {
                     es(),
                     setTimeout( () => {
-                        ea(),
-                        tw(!0)
+                        ea()
                     }
                     , 700)
                 }

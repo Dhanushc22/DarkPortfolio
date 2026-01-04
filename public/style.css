@@ -312,8 +312,8 @@ h1,h2,h3,h4,h5,h6 {
 
 h1 {
     font-family: "Dirtyline 36Daysoftype 2022";
-    font-size: 8.125rem;
-    line-height: 6.25rem
+    font-size: 6.125rem;
+    line-height: 5.5rem
 }
 
 h1,h1.small {
@@ -321,20 +321,20 @@ h1,h1.small {
 }
 
 h1.small {
-    font-size: 6.25rem;
-    line-height: 4.688rem
+    font-size: 5rem;
+    line-height: 4.5rem
 }
 
 .tr__services__blocks h2,.tr__work__image__box__wrapper h2,.tr__work__info h2,.tr__work__next h2 {
     font-family: "Dirtyline 36Daysoftype 2022";
-    font-size: 8.125rem;
-    line-height: 6.25rem;
+    font-size: 6.125rem;
+    line-height: 5.5rem;
     letter-spacing: -2px
 }
 
 .tr__services__blocks h2.small,.tr__work__info h2.small,.tr__work__next h2.small {
-    font-size: 6.25rem;
-    line-height: 6.25rem;
+    font-size: 5rem;
+    line-height: 5rem;
     letter-spacing: -2px
 }
 
@@ -357,15 +357,15 @@ h2 .tr__line__wrapper,h2 .tr__line__wrapper .tr__line,h4 .tr__line__wrapper,h4 .
 
 .tr__text__marquee__wrapper .tr__marquee__item h3,.tr__text__marquee__wrapper .tr__marquee__item__rev h3,h3 {
     font-family: "Dirtyline 36Daysoftype 2022";
-    font-size: 15rem;
-    line-height: 11.563rem;
+    font-size: 12rem;
+    line-height: 10.5rem;
     letter-spacing: -8px
 }
 
 h4 {
     font-family: Syne,sans-serif;
-    font-size: 2rem;
-    line-height: 2.625rem
+    font-size: 1.6rem;
+    line-height: 2.1rem
 }
 
 h4,h4 .tr__line__wrapper {
@@ -378,8 +378,8 @@ h4 .tr__line__wrapper {
 
 h5 {
     font-family: Syne,sans-serif;
-    font-size: 1.5rem;
-    line-height: 1.75rem
+    font-size: 1.25rem;
+    line-height: 1.6rem
 }
 
 h6 {
@@ -387,8 +387,8 @@ h6 {
 }
 
 h6,p {
-    font-size: 1.125rem;
-    line-height: 1.625rem
+    font-size: 1rem;
+    line-height: 1.6rem
 }
 
 .tr__work__image__box__wrapper h2 span,h3>span {
@@ -413,14 +413,14 @@ h6,p {
 
 @media (min-width: 280px) {
     h1 {
-        font-size:5rem;
-        line-height: 4rem;
+        font-size:4rem;
+        line-height: 3.6rem;
         letter-spacing: -1px
     }
 
     .tr__services__blocks h2.small,.tr__work__info h2.small,.tr__work__next h2.small,h1.small {
-        font-size: 4.5rem;
-        line-height: 3.5rem;
+        font-size: 3.5rem;
+        line-height: 3.2rem;
         letter-spacing: -1px
     }
 
@@ -440,8 +440,8 @@ h6,p {
     }
 
     .tr__text__marquee__wrapper .tr__marquee__item h3,.tr__text__marquee__wrapper .tr__marquee__item__rev h3,h3 {
-        font-size: 7rem;
-        line-height: 5.3rem;
+        font-size: 5.5rem;
+        line-height: 4.8rem;
         letter-spacing: -2px
     }
 
@@ -457,29 +457,29 @@ h6,p {
     }
 
     h3.small,h4 {
-        line-height: 2.8rem
+        line-height: 2.4rem
     }
 
     h4 {
-        font-size: 2.375rem
+        font-size: 1.875rem
     }
 
     h5 {
-        font-size: 2rem;
-        line-height: 2.75rem
-    }
-
-    h6 {
         font-size: 1.5rem;
         line-height: 2rem
     }
 
+    h6 {
+        font-size: 1.25rem;
+        line-height: 1.6rem
+    }
+
     p {
-        line-height: 2.4rem
+        line-height: 2rem
     }
 
     p,p.big {
-        font-size: 1.7rem
+        font-size: 1.3rem
     }
 
     p.big {
@@ -495,8 +495,8 @@ h6,p {
 
 @media (min-width: 640px) {
     .tr__services__blocks h2.small,.tr__work__info h2.small,h1,h1.small {
-        font-size:5.175rem;
-        line-height: 4.125rem;
+        font-size:4rem;
+        line-height: 3.6rem;
         letter-spacing: -1px
     }
 
@@ -515,8 +515,8 @@ h6,p {
     }
 
     .tr__text__marquee__wrapper .tr__marquee__item h3,.tr__text__marquee__wrapper .tr__marquee__item__rev h3,h3 {
-        font-size: 8rem;
-        line-height: 6.125rem;
+        font-size: 6rem;
+        line-height: 5.2rem;
         letter-spacing: -2px
     }
 
@@ -527,29 +527,29 @@ h6,p {
     }
 
     h3.small {
-        font-size: 3.75rem;
-        line-height: 3rem;
+        font-size: 3rem;
+        line-height: 2.6rem;
         letter-spacing: -1px
     }
 
     h4 {
-        font-size: 1.85rem;
-        line-height: 2.25rem
+        font-size: 1.5rem;
+        line-height: 1.9rem
     }
 
     h5 {
-        font-size: 1.25rem;
-        line-height: 1.65rem
-    }
-
-    h6 {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
         line-height: 1.5rem
     }
 
+    h6 {
+        font-size: 1rem;
+        line-height: 1.4rem
+    }
+
     p {
-        font-size: 1.25rem;
-        line-height: 1.65rem
+        font-size: 1.1rem;
+        line-height: 1.6rem
     }
 
     p.big {
@@ -577,8 +577,8 @@ h6,p {
     }
 
     .tr__text__marquee__wrapper .tr__marquee__item h3,.tr__text__marquee__wrapper .tr__marquee__item__rev h3,h3 {
-        font-size: 4.8rem;
-        line-height: 3.6rem;
+        font-size: 3.8rem;
+        line-height: 3.2rem;
         letter-spacing: -2px
     }
 
@@ -2381,7 +2381,8 @@ header .tr__nav__humburger.tr__close span:nth-child(2) {
 }
 
 .tr__home__about__container {
-    margin: 1.5rem auto auto
+    margin: 1.5rem auto auto;
+    padding: 0 2rem
 }
 
 @media (min-width: 720px) {
@@ -2397,7 +2398,19 @@ header .tr__nav__humburger.tr__close span:nth-child(2) {
 }
 
 .tr__home__about h2 {
-    width: 100%
+    width: 100%;
+    font-size: 2.5rem;
+    line-height: 3rem;
+    text-align: left
+}
+
+.tr__home__about .tr__section__title h3 {
+    margin-left: -2rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+    font-size: 10rem;
+    line-height: 8rem;
+    white-space: nowrap;
 }
 
 @media (min-width: 1080px) {
@@ -2419,7 +2432,10 @@ header .tr__nav__humburger.tr__close span:nth-child(2) {
 }
 
 .tr__home__about p {
-    margin-bottom: 2.5rem
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    max-width: 42rem
 }
 
 .tr__home__about__container__about__page {
@@ -2710,14 +2726,14 @@ footer>.tr__footer__wrapper>.tr__home__achieved__container {
 
 .tr__home__achieved__number {
     font-family: DM Mono,monospace;
-    font-size: 7rem;
-    line-height: .8;
+    font-size: 5rem;
+    line-height: 1;
     letter-spacing: -5px;
     transition: all .5s ease;
     position: relative;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
     width: 100%;
-    overflow: hidden
+    overflow: visible
 }
 
 @media (min-width: 1320px) {
@@ -2758,16 +2774,18 @@ footer>.tr__footer__wrapper>.tr__home__achieved__container {
 
 .tr__home__achieved__category {
     font-family: "Dirtyline 36Daysoftype 2022";
-    font-size: 1.9rem;
-    line-height: 1.6rem;
+    font-size: 1.4rem;
+    line-height: 1.5rem;
     transition: all .5s ease;
     width: 100%;
     align-self: flex-end;
-    text-align: right
+    text-align: right;
+    overflow: visible
 }
 
 .tr__home__clients__says {
-    overflow: hidden
+    overflow: hidden;
+    display: none
 }
 
 .tr__home__clients__says__container {
@@ -3189,6 +3207,82 @@ footer>.tr__footer__wrapper>.tr__home__achieved__container {
     }
 }
 
+.tr__home__experiences {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 3rem;
+    padding-bottom: 3rem
+}
+
+@media (min-width: 960px) {
+    .tr__home__experiences {
+        padding-top: 6rem;
+        padding-bottom: 6rem
+    }
+}
+
+.tr__home__experiences .tr__section__title {
+    margin-bottom: 2rem
+}
+
+.tr__experience__grid {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 2rem
+}
+
+@media (min-width: 960px) {
+    .tr__experience__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+}
+
+.tr__experience__card {
+    background: rgba(31, 32, 34, 0.4);
+    border-radius: 1rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(224, 238, 238, 0.1)
+}
+
+.tr__experience__card:hover {
+    background: rgba(224, 238, 238, 0.1);
+    border-color: rgba(224, 238, 238, 0.3);
+    transform: translateY(-5px)
+}
+
+.tr__experience__header {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(224, 238, 238, 0.2);
+    padding-bottom: 1rem
+}
+
+.tr__experience__header h4 {
+    font-size: 1.25rem;
+    line-height: 1.6rem;
+    margin: 0 0 0.5rem 0;
+    color: #C5FCFC
+}
+
+.tr__experience__role {
+    font-size: 0.9rem;
+    color: #D9D9D9;
+    display: inline-block
+}
+
+.tr__experience__content p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    color: #D9D9D9;
+    margin-bottom: 0.75rem
+}
+
+.tr__experience__content p strong {
+    color: #C5FCFC;
+    font-weight: 600
+}
+
 .tr__home__dribbble {
     position: relative;
     width: 100%;
@@ -3233,6 +3327,55 @@ footer>.tr__footer__wrapper>.tr__home__achieved__container {
 .tr__home__dribbble__wrapper .tr__section__title {
     margin-bottom: 0;
     padding-bottom: 2.5rem
+}
+
+.tr__home__portfolio__gallery {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 4rem 0;
+    margin-top: 2rem
+}
+
+.tr__portfolio__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%
+}
+
+@media (min-width: 540px) {
+    .tr__portfolio__grid {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media (min-width: 1080px) {
+    .tr__portfolio__grid {
+        grid-template-columns: repeat(3, 1fr)
+    }
+}
+
+.tr__portfolio__item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    background: rgba(31, 32, 34, 0.4);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid rgba(197, 252, 252, 0.2)
+}
+
+.tr__portfolio__item:hover {
+    transform: translateY(-8px);
+    border-color: #C5FCFC;
+    background: rgba(31, 32, 34, 0.6)
+}
+
+.tr__portfolio__item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block
 }
 
 .tr__home__dribbble__posts {
