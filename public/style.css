@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap");@font-face {
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");@font-face {
     font-family: "Dirtyline 36Daysoftype 2022";
     src: url(/fonts/Dirtyline36Daysoftype2022-Reg.eot);
     src: url(/fonts/Dirtyline36Daysoftype2022-Reg.eot?#iefix) format("embedded-opentype"),url(/fonts/Dirtyline36Daysoftype2022-Reg.woff2) format("woff2"),url(/fonts/Dirtyline36Daysoftype2022-Reg.woff) format("woff"),url(/fonts/Dirtyline36Daysoftype2022-Reg.ttf) format("truetype");
@@ -25,7 +25,7 @@
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-    font-family: Roboto,sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
     font-feature-settings: normal;
     font-variation-settings: normal;
     -webkit-tap-highlight-color: transparent
@@ -312,8 +312,8 @@ h1,h2,h3,h4,h5,h6 {
 
 h1 {
     font-family: "Dirtyline 36Daysoftype 2022";
-    font-size: 6.125rem;
-    line-height: 5.5rem
+    font-size: 5.5rem;
+    line-height: 5rem
 }
 
 h1,h1.small {
@@ -321,8 +321,17 @@ h1,h1.small {
 }
 
 h1.small {
+    font-size: 4.5rem;
+    line-height: 4rem
+}
+
+.tr__banner__content h1 {
     font-size: 5rem;
-    line-height: 4.5rem
+    line-height: 4.5rem;
+}
+
+.tr__banner__content h1 span {
+    display: block;
 }
 
 .tr__services__blocks h2,.tr__work__image__box__wrapper h2,.tr__work__info h2,.tr__work__next h2 {
@@ -333,47 +342,41 @@ h1.small {
 }
 
 .tr__services__blocks h2.small,.tr__work__info h2.small,.tr__work__next h2.small {
-    font-size: 5rem;
-    line-height: 5rem;
-    letter-spacing: -2px
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    letter-spacing: -1px
 }
 
 .tr__process__step h2,.tr__work__image__box__wrapper h2.small,h2 {
-    font-size: 3.375rem;
-    line-height: 4rem
+    font-size: 1.75rem;
+    line-height: 2.25rem
 }
 
 .tr__process__step h2,h2 {
     font-family: Syne,sans-serif
 }
 
-h2,h2 .tr__line__wrapper {
-    overflow: hidden
-}
-
-h2 .tr__line__wrapper,h2 .tr__line__wrapper .tr__line,h4 .tr__line__wrapper,h4 .tr__line__wrapper .tr__line {
-    display: block
-}
-
 .tr__text__marquee__wrapper .tr__marquee__item h3,.tr__text__marquee__wrapper .tr__marquee__item__rev h3,h3 {
     font-family: "Dirtyline 36Daysoftype 2022";
+    font-size: 8rem;
+    line-height: 7rem;
+    letter-spacing: -5px
+}
+
+.tr__section__title h3 {
     font-size: 12rem;
-    line-height: 10.5rem;
-    letter-spacing: -8px
+    line-height: 10rem;
+}
+
+/* Stack the "recent work" title into two lines */
+.tr__home__works .tr__section__title h3 span {
+    display: block;
 }
 
 h4 {
     font-family: Syne,sans-serif;
-    font-size: 1.6rem;
-    line-height: 2.1rem
-}
-
-h4,h4 .tr__line__wrapper {
-    overflow: hidden
-}
-
-h4 .tr__line__wrapper {
-    display: block
+    font-size: 1rem;
+    line-height: 1.6rem
 }
 
 h5 {
@@ -413,9 +416,14 @@ h6,p {
 
 @media (min-width: 280px) {
     h1 {
-        font-size:4rem;
-        line-height: 3.6rem;
+        font-size: 3.5rem;
+        line-height: 3.2rem;
         letter-spacing: -1px
+    }
+
+    .tr__banner__content h1 {
+        font-size: 3.2rem;
+        line-height: 2.9rem;
     }
 
     .tr__services__blocks h2.small,.tr__work__info h2.small,.tr__work__next h2.small,h1.small {
@@ -431,18 +439,24 @@ h6,p {
     }
 
     .tr__services__blocks h2.small,.tr__work__info h2.small,.tr__work__next h2.small {
+        font-size: 2rem;
         line-height: 1
     }
 
     .tr__process__step h2,h2 {
-        font-size: 2.9rem;
-        line-height: 3.2rem
+        font-size: 1.5rem;
+        line-height: 2rem
     }
 
     .tr__text__marquee__wrapper .tr__marquee__item h3,.tr__text__marquee__wrapper .tr__marquee__item__rev h3,h3 {
-        font-size: 5.5rem;
-        line-height: 4.8rem;
+        font-size: 5rem;
+        line-height: 4.5rem;
         letter-spacing: -2px
+    }
+
+    .tr__section__title h3 {
+        font-size: 6.5rem;
+        line-height: 6rem;
     }
 
     h3 span {
@@ -457,11 +471,11 @@ h6,p {
     }
 
     h3.small,h4 {
-        line-height: 2.4rem
+        line-height: 1.5rem
     }
 
     h4 {
-        font-size: 1.875rem
+        font-size: 1rem
     }
 
     h5 {
@@ -495,9 +509,14 @@ h6,p {
 
 @media (min-width: 640px) {
     .tr__services__blocks h2.small,.tr__work__info h2.small,h1,h1.small {
-        font-size:4rem;
-        line-height: 3.6rem;
+        font-size:2rem;
+        line-height: 2rem;
         letter-spacing: -1px
+    }
+
+    .tr__banner__content h1 {
+        font-size: 3.8rem;
+        line-height: 3.4rem;
     }
 
     .tr__work__image__box__wrapper h2.small {
@@ -506,17 +525,18 @@ h6,p {
     }
 
     .tr__services__blocks h2.small,.tr__work__info h2.small {
+        font-size: 2rem;
         line-height: 1
     }
 
     .tr__process__step h2,h2 {
-        font-size: 2.375rem;
-        line-height: 3rem
+        font-size: 1.5rem;
+        line-height: 2rem
     }
 
     .tr__text__marquee__wrapper .tr__marquee__item h3,.tr__text__marquee__wrapper .tr__marquee__item__rev h3,h3 {
-        font-size: 6rem;
-        line-height: 5.2rem;
+        font-size: 5.5rem;
+        line-height: 4.8rem;
         letter-spacing: -2px
     }
 
@@ -533,8 +553,8 @@ h6,p {
     }
 
     h4 {
-        font-size: 1.5rem;
-        line-height: 1.9rem
+        font-size: 1rem;
+        line-height: 1.5rem
     }
 
     h5 {
@@ -572,43 +592,43 @@ h6,p {
     }
 
     .tr__process__step h2,h2 {
-        font-size: 1.7rem;
-        line-height: 2.2rem
+        font-size: 1.2rem;
+        line-height: 1.6rem
     }
 
     .tr__text__marquee__wrapper .tr__marquee__item h3,.tr__text__marquee__wrapper .tr__marquee__item__rev h3,h3 {
-        font-size: 3.8rem;
-        line-height: 3.2rem;
+        font-size: 3.5rem;
+        line-height: 3rem;
         letter-spacing: -2px
     }
 
     h4 {
-        font-size: 1.5rem;
-        line-height: 1.75rem
+        font-size: 1rem;
+        line-height: 1.4rem
     }
 }
 
 @media (min-width: 1024px) {
     .tr__services__blocks h2.small,.tr__work__info h2.small,h1.small {
-        font-size:4.5rem;
-        line-height: 4rem;
+        font-size:2.25rem;
+        line-height: 2.25rem;
         letter-spacing: -1px
     }
 
     .tr__process__step h2,h2 {
-        font-size: 2.1rem;
-        line-height: 2.7rem
+        font-size: 1.5rem;
+        line-height: 2rem
     }
 
     h3 {
-        font-size: 7rem;
-        line-height: 5.35rem;
+        font-size: 6rem;
+        line-height: 5.2rem;
         letter-spacing: -2px
     }
 
     .tr__text__marquee__wrapper .tr__marquee__item h3,.tr__text__marquee__wrapper .tr__marquee__item__rev h3 {
-        font-size: 8rem;
-        letter-spacing: -2px
+        font-size: 7rem;
+        letter-spacing: -3px
     }
 
     h4 {
@@ -625,13 +645,13 @@ h6,p {
     }
 
     .tr__services__blocks h2.small,.tr__work__info h2.small,h1.small {
-        font-size: 4.85rem;
-        line-height: 3.65rem;
-        letter-spacing: -2px
+        font-size: 2.5rem;
+        line-height: 2.5rem;
+        letter-spacing: -1px
     }
 
     .tr__services__blocks h2.small,.tr__work__info h2.small {
-        font-size: 4rem
+        font-size: 2.5rem
     }
 
     .tr__work__image__box__wrapper h2.small {
@@ -640,23 +660,24 @@ h6,p {
     }
 
     .tr__services__blocks h2.small,.tr__work__info h2.small {
+        font-size: 2.5rem;
         line-height: 1
     }
 
     h2 {
-        font-size: 2.5rem;
-        line-height: 3rem
+        font-size: 1.5rem;
+        line-height: 2rem
     }
 
     .tr__process__step h2 {
-        font-size: 2.2rem;
-        line-height: 2.5rem
+        font-size: 1.5rem;
+        line-height: 2rem
     }
 
     .tr__text__marquee__wrapper .tr__marquee__item h3,.tr__text__marquee__wrapper .tr__marquee__item__rev h3,h3 {
-        font-size: 11rem;
-        line-height: 8.1rem;
-        letter-spacing: -6px
+        font-size: 9rem;
+        line-height: 7.5rem;
+        letter-spacing: -5px
     }
 
     h3 span {
@@ -707,14 +728,14 @@ h6,p {
     }
 
     .tr__process__step h2,h2 {
-        font-size: 2.15rem;
-        line-height: 2.5rem
+        font-size: 1.5rem;
+        line-height: 2rem
     }
 
     .tr__text__marquee__wrapper .tr__marquee__item h3,.tr__text__marquee__wrapper .tr__marquee__item__rev h3,h3 {
-        font-size: 8rem;
-        line-height: 5.9rem;
-        letter-spacing: -6px
+        font-size: 7rem;
+        line-height: 6rem;
+        letter-spacing: -4px
     }
 }
 
@@ -2290,9 +2311,19 @@ header .tr__nav__humburger.tr__close span:nth-child(2) {
     text-align: center
 }
 
+.tr__work__info p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.85
+}
+
 @media (min-width: 720px) {
     .tr__work__info {
         margin-bottom:0
+    }
+    
+    .tr__work__info p {
+        font-size: 1rem
     }
 }
 
@@ -2318,7 +2349,9 @@ header .tr__nav__humburger.tr__close span:nth-child(2) {
 .tr__work__image {
     display: flex;
     width: 100%;
-    align-items: center
+    align-items: center;
+    flex: 1;
+    overflow: hidden
 }
 
 .tr__work__image,.tr__work__image img {
@@ -2342,7 +2375,13 @@ header .tr__nav__humburger.tr__close span:nth-child(2) {
     .tr__work {
         height:70vh;
         flex-direction: row;
-        flex-wrap: nowrap
+        flex-wrap: nowrap;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+        margin-left: -3rem;
+        margin-right: -3rem;
+        width: calc(100% + 6rem)
     }
 
     @media (min-width: 1920px) {
@@ -2357,18 +2396,43 @@ header .tr__nav__humburger.tr__close span:nth-child(2) {
     }
 
     .tr__work__image {
-        width: 58.333333%
+        width: 60%;
+        margin-right: 0;
+        margin-left: 0;
+        flex: 1;
+        height: 100%;
+        overflow: hidden
     }
 
     .tr__work__info {
         margin-top: 0;
-        width: 41.666667%;
-        text-align: left
+        width: 35%;
+        text-align: left;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 3rem 1.5rem;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        height: 100%
+    }
+
+    .tr__work:nth-child(2n+2) .tr__work__info {
+        justify-content: center;
+        text-align: right;
+        align-items: flex-end;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem
     }
 
     .tr__work:nth-child(2n+2) .tr__work__info {
         justify-content: flex-end;
-        text-align: right
+        text-align: right;
+        margin-left: 0;
+        margin-right: 0
     }
 
     .tr__work__info .button {
@@ -2399,17 +2463,18 @@ header .tr__nav__humburger.tr__close span:nth-child(2) {
 
 .tr__home__about h2 {
     width: 100%;
-    font-size: 2.5rem;
-    line-height: 3rem;
-    text-align: left
+    font-size: 1.7rem;
+    line-height: 2.2rem;
+    text-align: left;
+    margin-top: -0.5rem;
 }
 
 .tr__home__about .tr__section__title h3 {
     margin-left: -2rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: -1rem;
     width: 100%;
-    font-size: 10rem;
-    line-height: 8rem;
+    font-size: 6rem;
+    line-height: 5.2rem;
     white-space: nowrap;
 }
 
@@ -2500,6 +2565,15 @@ header .tr__nav__humburger.tr__close span:nth-child(2) {
 
 .tr__home__about__about__page__wrapper p {
     margin-bottom: 1.25rem
+}
+
+/* Global text sizing for all sections below projects */
+.tr__home__about p,
+.tr__home__clients__says p,
+.tr__footer__wrapper p,
+.tr__social p {
+    font-size: 1rem;
+    line-height: 1.6rem;
 }
 
 .tr__home__achieved {
@@ -2726,9 +2800,9 @@ footer>.tr__footer__wrapper>.tr__home__achieved__container {
 
 .tr__home__achieved__number {
     font-family: DM Mono,monospace;
-    font-size: 5rem;
+    font-size: 3rem;
     line-height: 1;
-    letter-spacing: -5px;
+    letter-spacing: -3px;
     transition: all .5s ease;
     position: relative;
     margin-bottom: 2rem;
@@ -2774,8 +2848,8 @@ footer>.tr__footer__wrapper>.tr__home__achieved__container {
 
 .tr__home__achieved__category {
     font-family: "Dirtyline 36Daysoftype 2022";
-    font-size: 1.4rem;
-    line-height: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.3rem;
     transition: all .5s ease;
     width: 100%;
     align-self: flex-end;
@@ -3797,10 +3871,6 @@ footer .tr__only__mobile {
     --tw-space-y-reverse: 0;
     margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(1rem * var(--tw-space-y-reverse))
-}
-
-.tr__services__blocks h2 .tr__line {
-    margin-bottom: -.75rem
 }
 
 .tr__services__block__wrapper {

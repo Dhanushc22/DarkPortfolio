@@ -1,0 +1,36 @@
+/* Scroll-driven heading reveal (dark-first) */
+.text-scroll-heading {
+    --text-scroll-inactive: #3a4044;
+    --text-scroll-active: #e0eeee;
+}
+
+.text-scroll-heading .text-scroll-line {
+    display: inline;
+    opacity: 0.4;
+    transition: opacity 0.6s ease;
+}
+
+.text-scroll-heading.text-scroll-visible .text-scroll-line {
+    opacity: 1;
+}
+
+html.tr__light__theme .text-scroll-heading {
+    --text-scroll-inactive: #9aa4aa;
+    --text-scroll-active: #16181c;
+}
+
+html.tr__light__theme .text-scroll-heading .text-scroll-line {
+    opacity: 0.3;
+}
+
+html.tr__light__theme .text-scroll-heading.text-scroll-visible .text-scroll-line {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .text-scroll-heading .text-scroll-line {
+        transition: none;
+        opacity: 1;
+    }
+}
+
