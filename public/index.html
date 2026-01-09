@@ -11,7 +11,7 @@
     <meta property="og:title" content="Dhanush C | Building Thoughtful Apps.">
     <meta property="og:description" content="MCA student and application developer creating clean, reliable products for mobile and web.">
     <meta property="og:image" content="/_next/static/media/trionn-logo.a737ca31.png">
-    <meta property="og:site_name" content="TRIONNÂ®">
+    <meta property="og:site_name" content="Dhanush C">
     <meta property="og:copyright" content="hello@trionn.com">
     <meta name="twitter:site" content="@trionn_design">
     <meta name="HandheldFriendly" content="True">
@@ -41,14 +41,94 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
 
     <meta name="next-head-count" content="25">
+    <!-- Elegant Cursor (no libraries) -->
+    <script defer src="/cursor.js"></script>
 </head>
 <body>
     <div id="__next">
-        <div class="loader fixed top-0 left-0 w-full h-screen overflow-hidden opacity-0 invisible">
+        <div class="loader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #17181A; z-index: 999; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <!-- Professional Loading Animation -->
+            <div class="loader-container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                <!-- Animated rings loader -->
+                <svg class="professional-loader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80" style="margin: 0 auto 20px;">
+                    <defs>
+                        <linearGradient id="loader-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#4CAF50;stop-opacity:1"/>
+                            <stop offset="100%" style="stop-color:#2196F3;stop-opacity:1"/>
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Outer ring -->
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#2a2a2a" stroke-width="2" opacity="0.3"/>
+                    
+                    <!-- Animated ring -->
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="url(#loader-gradient)" stroke-width="3" stroke-linecap="round" stroke-dasharray="283" stroke-dashoffset="75">
+                        <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="1.5s" repeatCount="indefinite"/>
+                    </circle>
+                    
+                    <!-- Inner pulsing circle -->
+                    <circle cx="50" cy="50" r="20" fill="url(#loader-gradient)" opacity="0.2">
+                        <animate attributeName="r" values="20;25;20" dur="1.5s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.2;0.4;0.2" dur="1.5s" repeatCount="indefinite"/>
+                    </circle>
+                </svg>
+                
+                <!-- Loading text -->
+                <div style="color: #fff; font-size: 14px; font-weight: 500; letter-spacing: 2px; margin-top: 10px;">
+                    <span style="display: inline-block; animation: fade 1.5s infinite;">LOADING</span>
+                    <span style="display: inline-block; animation: dot1 1.5s infinite;">.</span>
+                    <span style="display: inline-block; animation: dot2 1.5s infinite;">.</span>
+                    <span style="display: inline-block; animation: dot3 1.5s infinite;">.</span>
+                </div>
+                
+                <style>
+                    @keyframes fade {
+                        0%, 100% { opacity: 0.5; }
+                        50% { opacity: 1; }
+                    }
+                    @keyframes dot1 {
+                        0%, 20%, 100% { opacity: 0; }
+                        40% { opacity: 1; }
+                    }
+                    @keyframes dot2 {
+                        0%, 40%, 100% { opacity: 0; }
+                        60% { opacity: 1; }
+                    }
+                    @keyframes dot3 {
+                        0%, 60%, 100% { opacity: 0; }
+                        80% { opacity: 1; }
+                    }
+                </style>
+            </div>
+            
             <svg id="shape-overlays" class="overlay h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
                 <path fill="#17181A" class="overlay__path" vector-effect="non-scaling-stroke" d="M 0 0 V 0 Q 50 0 100 0 V 0 z"></path>
             </svg>
         </div>
+
+        <!-- Auto-hide loader after 5 seconds -->
+        <script>
+            // Scroll to top immediately
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            
+            // Hide loader after 5 seconds
+            setTimeout(function() {
+                const loader = document.querySelector('.loader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    loader.style.visibility = 'hidden';
+                    loader.style.pointerEvents = 'none';
+                    loader.style.transition = 'opacity 0.5s ease-out, visibility 0.5s ease-out';
+                    
+                    // Ensure page starts from top after loader hides
+                    setTimeout(function() {
+                        window.scrollTo({ top: 0, behavior: 'instant' });
+                    }, 500);
+                }
+            }, 5000);
+        </script>
 
         <header>
             <div class="relative left-1/2 top-14 md:top-10 -translate-x-2/4 flex justify-center items-center space-x-1" style="height: 1px;">
@@ -61,14 +141,14 @@
             </div>
             <div class="tr__container tr__header__container">
                 <div class="tr__header__left">
-                    <a aria-label="Dhanush" class="tr__cursor__hoverable" href="/">
-                        <img alt="Dhanush" loading="lazy" width="118" height="22" decoding="async" data-nimg="1" src="/assets/images/logo.svg" style="color: transparent; margin-top: -3px;">
+                    <a aria-label="Dhanush C" class="tr__cursor__hoverable" href="/">
+                        <img alt="Dhanush C" loading="lazy" width="118" height="22" decoding="async" data-nimg="1" src="/assets/images/logo.svg" style="color: transparent; margin-top: -3px;">
                     </a>
                 </div>
                 <div class="tr__header__right">
                     <div class="tr__cursor__hoverable flex items-center">
                         <span class="cursor-pointer pr-3">menu</span>
-                        <a class="tr__nav__humburger tr__magnetic" aria-label="Trionn" href="/"><span></span><span></span></a>
+                        <a class="tr__nav__humburger tr__magnetic" aria-label="Dhanush C" href="/"><span></span><span></span></a>
                     </div>
                 </div>
             </div>
@@ -82,7 +162,7 @@
                             <h1 class="hidden sm:block uppercase"><span>building intelligent</span><span>digital experiences.</span></h1>
                             <h1 class="block sm:hidden uppercase"><span>building</span><span>intelligent</span><span>digital experiences.</span></h1>
                             <p class="px-1 sm:px-0 mt-4 mb-8 sm:mb-4 tr__banner__fadeUp"><span>I design and develop modern web and mobile applications,</span><span>combining clean UI, scalable architecture,</span><span>and real-world problem solving.</span></p>
-                            <p class="text-center tr__banner__fadeUp"><a aria-label="Trionn" class="tr__cursor__hoverable tr__magnetic inline-block" href="/"><img alt="Trionn" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="opacity-40" src="/_next/static/media/move-down.31fd25f2.svg" style="color: transparent;"></a></p>
+                            <p class="text-center tr__banner__fadeUp"><a aria-label="Dhanush C" class="tr__cursor__hoverable tr__magnetic inline-block" href="/"><img alt="Dhanush C" loading="lazy" width="24" height="24" decoding="async" data-nimg="1" class="opacity-40" src="/_next/static/media/move-down.31fd25f2.svg" style="color: transparent;"></a></p>
                             <div class="tr__banner_bottom">
                                 <a class="button tr__magnetic tr__cursor__hoverable tr__cursor__hoverable__play z-2 tr__banner__fadeUp" aria-label="Explore work" href="/work">Explore work<span class="tr__button__background"></span></a>
                                 <div class="absolute opacity-0 invisible">
@@ -102,8 +182,8 @@
 
                 <section class="tr__section tr__home__works relative">
                     <div class="tr__section__title tr__container">
-                        <div class="tr__section__title__left">
-                            <h3 class="uppercase"><span>recent </span><span> work</span></h3>
+                        <div class="tr__section__title__left" style="padding-left: 0; margin-left: -20px;">
+                            <h3 class="uppercase"><span>recent</span><br><span>work</span></h3>
                             <h4 class="tr__heading__animation">
                                 <div class="tr__line__wrapper" style="display: block; text-align: start; position: relative;"><div class="tr__line">In the creative wilderness, </div></div>
                                 <div class="tr__line__wrapper" style="display: block; text-align: start; position: relative;"><div class="tr__line">recent builds showcase </div></div>
@@ -120,33 +200,33 @@
                             <div class="tr__work__info">
                                 <div class="tr__work__info__wrapper">
                                     <div class="tr__work__info__row"><a aria-label="WhereIsMyFlight" href="/work/WhereIsMyFlight"><h2 class="small tr__cursor__hoverable tr__magnetic inline">WhereIsMyFlight</h2></a></div>
-                                    <div class="tr__work__info__row"><p class="mb-10">Real-time flight tracking with live status updates and smart notifications.</p></div>
+                                    <div class="tr__work__info__row"><p class="mb-3 text-xs opacity-60">Dhanush C and others</p><p class="mb-10">Real-time flight tracking with live status updates and smart notifications.</p></div>
                                     <div class="tr__work__info__row"><a class="button tr__magnetic tr__cursor__hoverable tr__cursor__hoverable__play z-2" aria-label="View project" href="/work/WhereIsMyFlight">View project<span class="tr__button__background"></span></a></div>
                                 </div>
                             </div>
-                            <div class="tr__work__image"><a aria-label="WhereIsMyFlight" href="/work/WhereIsMyFlight"><img alt="Trionn" loading="lazy" width="1500" height="1000" decoding="async" data-nimg="1" class="w-full" src="/whareis%20my%20flight.png"></a></div>
+                            <div class="tr__work__image"><a aria-label="WhereIsMyFlight" href="/work/WhereIsMyFlight"><img alt="Dhanush C" loading="lazy" width="1200" height="800" decoding="async" data-nimg="1" class="w-5/6" style="border-radius: 2rem; display: block;" src="/whareis%20my%20flight.png"></a></div>
                         </div>
 
                         <div class="tr__work">
                             <div class="tr__work__info">
                                 <div class="tr__work__info__wrapper">
                                     <div class="tr__work__info__row"><a aria-label="HealthWhisper" href="/work/HealthWhisper"><h2 class="small tr__cursor__hoverable tr__magnetic inline">HealthWhisper</h2></a></div>
-                                    <div class="tr__work__info__row"><p class="mb-10">AI-powered healthcare app for X-ray analysis and medical consultations.</p></div>
+                                    <div class="tr__work__info__row"><p class="mb-3 text-xs opacity-60">Dhanush C and others</p><p class="mb-10">AI-powered healthcare app for X-ray analysis and medical consultations.</p></div>
                                     <div class="tr__work__info__row"><a class="button tr__magnetic tr__cursor__hoverable tr__cursor__hoverable__play z-2" aria-label="View project" href="/work/HealthWhisper">View project<span class="tr__button__background"></span></a></div>
                                 </div>
                             </div>
-                            <div class="tr__work__image"><a aria-label="HealthWhisper" href="/work/HealthWhisper"><img alt="Trionn" loading="lazy" width="1500" height="1000" decoding="async" data-nimg="1" class="w-full" src="/HealthWhisper.png"></a></div>
+                            <div class="tr__work__image"><a aria-label="HealthWhisper" href="/work/HealthWhisper"><img alt="Dhanush C" loading="lazy" width="1200" height="800" decoding="async" data-nimg="1" class="w-5/6" style="border-radius: 2rem; display: block;" src="/HealthWhisper.png"></a></div>
                         </div>
 
                         <div class="tr__work">
                             <div class="tr__work__info">
                                 <div class="tr__work__info__wrapper">
                                     <div class="tr__work__info__row"><a aria-label="BinaryBox" href="/work/BinaryBox"><h2 class="small tr__cursor__hoverable tr__magnetic inline">BinaryBox</h2></a></div>
-                                    <div class="tr__work__info__row"><p class="mb-10">Secure offline Android app for file-to-binary conversion and restoration.</p></div>
+                                    <div class="tr__work__info__row"><p class="mb-3 text-xs opacity-60">Dhanush C and others</p><p class="mb-10">Secure offline Android app for file-to-binary conversion and restoration.</p></div>
                                     <div class="tr__work__info__row"><a class="button tr__magnetic tr__cursor__hoverable tr__cursor__hoverable__play z-2" aria-label="View project" href="/work/BinaryBox">View project<span class="tr__button__background"></span></a></div>
                                 </div>
                             </div>
-                            <div class="tr__work__image"><a aria-label="BinaryBox" href="/work/BinaryBox"><img alt="Trionn" loading="lazy" width="1500" height="1000" decoding="async" data-nimg="1" class="w-full" src="/BinaryBox.png"></a></div>
+                            <div class="tr__work__image"><a aria-label="BinaryBox" href="/work/BinaryBox"><img alt="Dhanush C" loading="lazy" width="1200" height="800" decoding="async" data-nimg="1" class="w-5/6" style="border-radius: 2rem; display: block;" src="/BinaryBox.png"></a></div>
                         </div>
                     </div>
 
@@ -155,7 +235,7 @@
 
                 <section class="tr__section tr__home__about">
                     <div class="tr__section__title tr__container">
-                        <div class="tr__section__title__left"><h3 class="uppercase text-4xl sm:text-5xl lg:text-7xl"><span>who </span><span>I am</span></h3></div>
+                        <div class="tr__section__title__left"><h3 class="uppercase text-5xl sm:text-6xl lg:text-8xl"><span>who</span><span>I am</span></h3></div>
                     </div>
                     <div class="tr__container tr__home__about__container">
                         <h2 class="text-2xl sm:text-3xl lg:text-5xl tr__heading__animation -mt-14 lg:-mt-10 mb-10">
@@ -229,19 +309,19 @@
                 <section class="tr__section tr__home__dribbble" id="tr__home__dribbble">
                     <div class="tr__container tr__home__dribbble__container">
                         <div class="tr__home__dribbble__wrapper">
-                            <div class="float-none inline-block m-auto z-1"><img alt="Trionn" loading="lazy" width="200" height="60" decoding="async" data-nimg="1" class="tr__fadeUp" src="/_next/static/media/dribbble.1a51ca99.webp"></div>
+                            <div class="float-none inline-block m-auto z-1"><img alt="Dhanush C" loading="lazy" width="200" height="60" decoding="async" data-nimg="1" class="tr__fadeUp" src="/_next/static/media/dribbble.1a51ca99.webp"></div>
                             <div class="tr__section__title tr__container">
                                 <div class="tr__section__title__left"><h4 class="tr__heading__animation"><div class="tr__line__wrapper" style="display: block; text-align: center; position: relative;"><div class="tr__line">Like a lion's roar echoing through </div></div><div class="tr__line__wrapper" style="display: block; text-align: center; position: relative;"><div class="tr__line">the jungle, a hint of our creative </div></div><div class="tr__line__wrapper" style="display: block; text-align: center; position: relative;"><div class="tr__line">minds emerges.</div></div></h4></div>
                             </div>
                             <div class="tr__fadeUp"><a class="button tr__magnetic tr__cursor__hoverable tr__cursor__hoverable__play z-2 float-none inline-block m-auto z-1" aria-label="View Dribbble" target="_blank" href="https://dribbble.com/trionndesign">View Dribbble<span class="tr__button__background"></span></a></div>
                         </div>
                         <div class="tr__home__dribbble__posts">
-                            <div class="tr__home__dribbble__post tr__home__dribbble__post__1"><img alt="Trionn" loading="lazy" width="600" height="420" decoding="async" data-nimg="1" src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=420&fit=crop" style="color: transparent;"></div>
-                            <div class="tr__home__dribbble__post tr__home__dribbble__post__2"><img alt="Trionn" loading="lazy" width="600" height="420" decoding="async" data-nimg="1" src="https://images.unsplash.com/photo-1559028012-481c04fa702d?w=600&h=420&fit=crop" style="color: transparent;"></div>
-                            <div class="tr__home__dribbble__post tr__home__dribbble__post__3"><img alt="Trionn" loading="lazy" width="600" height="420" decoding="async" data-nimg="1" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=420&fit=crop" style="color: transparent;"></div>
-                            <div class="tr__home__dribbble__post tr__home__dribbble__post__4"><img alt="Trionn" loading="lazy" width="600" height="420" decoding="async" data-nimg="1" src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=420&fit=crop" style="color: transparent;"></div>
-                            <div class="tr__home__dribbble__post tr__home__dribbble__post__5"><img alt="Trionn" loading="lazy" width="600" height="420" decoding="async" data-nimg="1" src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&h=420&fit=crop" style="color: transparent;"></div>
-                            <div class="tr__home__dribbble__post tr__home__dribbble__post__6"><img alt="Trionn" loading="lazy" width="600" height="420" decoding="async" data-nimg="1" src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?w=600&h=420&fit=crop" style="color: transparent;"></div>
+                            <div class="tr__home__dribbble__post tr__home__dribbble__post__1"><img alt="Gallery Image 1" loading="lazy" width="600" height="420" decoding="async" data-nimg="1" src="/assets/images/gallery1.png" style="color: transparent;"></div>
+                            <div class="tr__home__dribbble__post tr__home__dribbble__post__2"><img alt="Gallery Image 2" loading="lazy" width="600" height="420" decoding="async" data-nimg="1" src="/assets/images/gallery2.png" style="color: transparent;"></div>
+                            <div class="tr__home__dribbble__post tr__home__dribbble__post__3"><img alt="Gallery Image 3" loading="lazy" width="600" height="420" decoding="async" data-nimg="1" src="/assets/images/gallery3.png" style="color: transparent;"></div>
+                            <div class="tr__home__dribbble__post tr__home__dribbble__post__4"><img alt="Gallery Image 4" loading="lazy" width="600" height="420" decoding="async" data-nimg="1" src="/assets/images/gallery4.png" style="color: transparent;"></div>
+                            <div class="tr__home__dribbble__post tr__home__dribbble__post__5"><img alt="Gallery Image 5" loading="lazy" width="600" height="420" decoding="async" data-nimg="1" src="/assets/images/gallery5.png" style="color: transparent;"></div>
+                            <div class="tr__home__dribbble__post tr__home__dribbble__post__6"><img alt="Gallery Image 6" loading="lazy" width="600" height="420" decoding="async" data-nimg="1" src="/assets/images/gallery6.png" style="color: transparent;"></div>
                         </div>
                     </div>
                 </section>
@@ -276,7 +356,7 @@
                         </div>
                         <div class="tr__container tr__footer__copyright">
                             <div class="tr__footer__copyright__left tr__fadeUp"><p>Â© 2026 Dhanush C.</p></div>
-                            <div class="tr__footer__copyright__right tr__fadeUp"><a aria-label="Trionn" class="tr__cursor__hoverable tr__magnetic inline-block" href="/"><img alt="Trionn" loading="lazy" width="34" height="34" decoding="async" data-nimg="1" src="/_next/static/media/move-top.650752b8.svg" style="color: transparent;"></a></div>
+                            <div class="tr__footer__copyright__right tr__fadeUp"><a aria-label="Dhanush C" class="tr__cursor__hoverable tr__magnetic inline-block" href="/"><img alt="Dhanush C" loading="lazy" width="34" height="34" decoding="async" data-nimg="1" src="/_next/static/media/move-top.650752b8.svg" style="color: transparent;"></a></div>
                         </div>
                     </div>
                 </footer>
@@ -285,8 +365,8 @@
 
         <div class="tr__masking tr__cursor__hoverable">
             <div class="tr__masking__wrapper">
-                <div class="tr__masking__primary"><h3 class="tr__heading__animation"></h3><img alt="Trionn" loading="lazy" width="1440" height="305" decoding="async" data-nimg="1" class="w-full tr__footer__masking" src="/_next/static/media/footer-logo.7dd398e2.svg" style="color: transparent;"></div>
-                <div class="tr__masking__secondary" style="--y: -2677px; --x: 148px;"><h3 class="tr__heading__animation"></h3><img alt="Trionn" loading="lazy" width="1440" height="305" decoding="async" data-nimg="1" class="w-full tr__footer__masking" src="/_next/static/media/footer-logo.7dd398e2.svg" style="color: transparent;"></div>
+                <div class="tr__masking__primary"><h3 class="tr__heading__animation"></h3><img alt="Dhanush C" loading="lazy" width="1440" height="305" decoding="async" data-nimg="1" class="w-full tr__footer__masking" src="/_next/static/media/footer-logo.7dd398e2.svg" style="color: transparent;"></div>
+                <div class="tr__masking__secondary" style="--y: -2677px; --x: 148px;"><h3 class="tr__heading__animation"></h3><img alt="Dhanush C" loading="lazy" width="1440" height="305" decoding="async" data-nimg="1" class="w-full tr__footer__masking" src="/_next/static/media/footer-logo.7dd398e2.svg" style="color: transparent;"></div>
             </div>
         </div>
 
@@ -524,74 +604,3 @@
         })();
     </script>
 </body>
-</html><!DOCTYPE html>
-<html lang="en" class="lenis lenis-smooth">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dhanush C | Building Thoughtful Apps.</title>
-    <meta name="description" content="Dhanush C â€“ MCA student and application developer crafting clean mobile and web experiences from Bengaluru, India.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://trionn.com">
-    <meta property="og:title" content="Dhanush C | Building Thoughtful Apps.">
-    <meta property="og:description" content="MCA student and application developer creating clean, reliable products for mobile and web.">
-    <meta property="og:image" content="/_next/static/media/trionn-logo.a737ca31.png">
-    <meta property="og:site_name" content="TRIONNÂ®">
-    <meta property="og:copyright" content="hello@trionn.com">
-    <meta name="twitter:site" content="@trionn_design">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="theme-color" content="#000000">
-    <link rel="icon" href="/favicon.svg">
-    <link rel="apple-touch-icon" sizes="57x57" href="/_next/static/media/apple-touch-icon-57x57.0d7f70a8.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/_next/static/media/apple-touch-icon-60x60.51b5eff2.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/_next/static/media/apple-touch-icon-72x72.63eb2b39.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/_next/static/media/apple-touch-icon-76x76.3f61f6ca.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/_next/static/media/apple-touch-icon-114x114.c3eb217f.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/_next/static/media/apple-touch-icon-120x120.c5031803.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/_next/static/media/apple-touch-icon-144x144.8c90c2f7.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/_next/static/media/apple-touch-icon-152x152.5e11a0eb.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/_next/static/media/apple-touch-icon-180x180.ff2c4ba1.png">
-    
-    <!-- Custom Fonts -->
-    <link rel="stylesheet" href="/fonts.css">
-    
-    <!-- External Stylesheets -->
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/textscroll.css">
-    
-    <!-- GSAP Library and Plugins -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js"></script>
-    
-    <meta name="next-head-count" content="25">
-</head>
-<body>
-    <div id="__next">
-        <div class="loader fixed top-0 left-0 w-full h-screen overflow-hidden opacity-0 invisible">
-            <svg id="shape-overlays" class="overlay h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path fill="#17181A" class="overlay__path" vector-effect="non-scaling-stroke" d="M 0 0 V 0 Q 50 0 100 0 V 0 z"></path>
-            </svg>
-        </div>
-        
-        <header>
-            <div class="relative left-1/2 top-14 md:top-10 -translate-x-2/4 flex justify-center items-center space-x-1" style="height: 1px;">
-                <div class="w-14 md:w-9 lg:w-6 h-14 md:h-9 lg:h-6 cursor-pointer z-2 flex justify-center items-center">
-                    <img alt="Dhanush" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="w-full h-full tr__cursor__hoverable tr__magnetic" src="/_next/static/media/light-mode-icon.035572eb.svg" style="color: transparent;">
-                </div>
-                <div class="w-14 md:w-9 lg:w-6 h-14 md:h-9 lg:h-6 cursor-pointer p-0.5 z-2 flex justify-center items-center rounded-full tr__cursor__hoverable tr__magnetic sound-icon" style="background: rgba(217, 217, 217, 0.1);">
-                    <img alt="Sound" loading="lazy" width="32" height="32" decoding="async" data-nimg="1" class="w-full h-full" src="/_next/static/media/sound-mute.99b17403.svg" style="color: transparent;">
-                </div>
-            </div>
-            <div class="tr__container tr__header__container">
-                <div class="tr__header__left">
-                    <a aria-label="Dhanush" class="tr__cursor__hoverable" href="/">
-                        <img alt="Dhanush" loading="lazy" width="118" height="22" decoding="async" data-nimg="1" src="/assets/images/logo.svg" style="color: transparent; margin-top: -3px;">
-                    </a>
-                </div>
-                <div class="tr__header__right">
-                    <div class="tr__cursor__hoverable flex items-center">
-                        <span class="cursor-pointer pr-3">menu</span>
-                        <a class="tr__nav__humburger tr__magnetic" aria-label="Trionn" href="/"><span></span><span></span></a>

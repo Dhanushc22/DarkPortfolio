@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="120" height="120">
+  <defs>
+    <style>
+      @keyframes feedburnerFloat {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(5deg); }
+      }
+      .feedburner-icon {
+        animation: feedburnerFloat 3s ease-in-out infinite;
+        transform-origin: 50% 50%;
+      }
+    </style>
+  </defs>
+  <g class="feedburner-icon" fill="#ff5722">
+    <!-- Flame base -->
+    <path d="M 50 20 C 50 20 40 35 40 45 C 40 55 45 60 50 60 C 55 60 60 55 60 45 C 60 35 50 20 50 20 Z"/>
+    <!-- Flame middle -->
+    <path d="M 50 30 C 50 30 43 40 43 47 C 43 53 46.5 57 50 57 C 53.5 57 57 53 57 47 C 57 40 50 30 50 30 Z" fill="#ff9800" opacity="0.8"/>
+    <!-- Flame top glow -->
+    <circle cx="50" cy="25" r="6" fill="#ffb74d" opacity="0.6"/>
+  </g>
+</svg>

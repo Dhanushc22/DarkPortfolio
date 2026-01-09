@@ -27,10 +27,16 @@ function initProjectScrollAnimations() {
     
     console.log('[SCROLL] ✓ GSAP available, ScrollTrigger loaded, found', workItems.length, 'work items');
     
-    // Create animations for images with curved motion
+    // Create animations matching internship section exactly
     let animationCount = 0;
     
     workItems.forEach((item, index) => {
+        // Prevent duplicate timelines if this init runs multiple times
+        if (item.dataset.animInit === '1') {
+            return;
+        }
+        item.dataset.animInit = '1';
+        
         const workImage = item.querySelector('.tr__work__image');
         
         if (!workImage) {
@@ -38,71 +44,103 @@ function initProjectScrollAnimations() {
             return;
         }
         
-        // Even items (0, 2, 4...) - image on RIGHT side: curve from right
-        if (index % 2 === 0) {
-            window.gsap.set(workImage, {
-                x: 120,
-                y: -30,
+        // Scroll-tied from→to animation (mirrors achievements/internship logic): outside → home, reverses on scroll up
+        const fromRight = index % 2 === 1;
+        window.gsap.fromTo(workImage,
+            {
+                x: fromRight ? 320 : -320,
+                y: 120,
                 opacity: 0,
-                scale: 0.85,
-                rotation: 15
-            });
-            
-            window.gsap.to(workImage, {
+                scale: 0.92,
+                rotation: fromRight ? 12 : -12
+            },
+            {
                 x: 0,
                 y: 0,
                 opacity: 1,
                 scale: 1,
                 rotation: 0,
-                duration: 0.9,
-                ease: "power2.out",
+                ease: "power2.inOut",
                 scrollTrigger: {
                     trigger: item,
-                    start: 'top 75%',
+                    start: 'top 85%',
                     end: 'top 25%',
-                    scrub: 1.5,
+                    scrub: 1.4,
                     once: false
                 }
-            });
-            animationCount++;
-            console.log('[SCROLL] Item', index, '- image curve from right');
-        }
-        // Odd items (1, 3, 5...) - image on LEFT side: curve from left
-        else {
-            window.gsap.set(workImage, {
-                x: -120,
-                y: -30,
-                opacity: 0,
-                scale: 0.85,
-                rotation: -15
-            });
-            
-            window.gsap.to(workImage, {
-                x: 0,
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                rotation: 0,
-                duration: 0.9,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: item,
-                    start: 'top 75%',
-                    end: 'top 25%',
-                    scrub: 1.5,
-                    once: false
-                }
-            });
-            animationCount++;
-            console.log('[SCROLL] Item', index, '- image curve from left');
-        }
+            }
+        );
+        animationCount++;
+        console.log('[SCROLL] Item', index, '- curve from', fromRight ? 'right' : 'left');
     });
 
     // Refresh ScrollTrigger to register all animations
     if (window.gsap.plugins?.ScrollTrigger) {
         window.gsap.plugins.ScrollTrigger.refresh();
-        console.log('[SCROLL] ✓ All curved image animations created:', animationCount, 'and ScrollTrigger refreshed');
+        console.log('[SCROLL] ✓ All project animations created:', animationCount, 'matching internship section, ScrollTrigger refreshed');
     }
+}
+
+// Header Text Scroll Animation - Slide from left/right with dark to light transition
+function initHeaderScrollAnimations() {
+    console.log('[SCROLL] initHeaderScrollAnimations called');
+
+    if (!window.gsap) {
+        console.log('[SCROLL] GSAP not available yet for header, retrying in 200ms...');
+        setTimeout(initHeaderScrollAnimations, 200);
+        return;
+    }
+
+    if (!window.gsap.plugins?.ScrollTrigger) {
+        console.log('[SCROLL] ScrollTrigger not registered for header, registering now...');
+        window.gsap.registerPlugin(window.gsap.plugins?.ScrollTrigger || ScrollTrigger);
+    }
+
+    const headerSection = document.querySelector('.tr__banner');
+    const headerSpans = headerSection?.querySelectorAll('.tr__banner h1 span');
+
+    if (!headerSpans || headerSpans.length === 0) {
+        console.log('[SCROLL] Header spans not found, retrying in 300ms...');
+        setTimeout(initHeaderScrollAnimations, 300);
+        return;
+    }
+
+    console.log('[SCROLL] Found', headerSpans.length, 'header spans to animate');
+
+    headerSpans.forEach((span, index) => {
+        // Alternate direction: even from left, odd from right
+        const fromLeft = index % 2 === 0;
+        const startX = fromLeft ? -200 : 200;
+
+        // Set initial state: off-screen and dark
+        window.gsap.set(span, {
+            x: startX,
+            opacity: 0.3,
+            color: '#444444'
+        });
+
+        // Create animation timeline
+        window.gsap.to(span, {
+            x: 0,
+            opacity: 1,
+            color: '#ffffff',
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: headerSection,
+                start: 'top 70%',
+                end: 'top 20%',
+                scrub: 1,
+                onEnter: () => console.log('[SCROLL] Header span', index, 'entering from', fromLeft ? 'left' : 'right'),
+                onLeaveBack: () => console.log('[SCROLL] Header span', index, 'leaving back')
+            }
+        });
+    });
+
+    if (window.gsap.plugins?.ScrollTrigger) {
+        window.gsap.plugins.ScrollTrigger.refresh();
+    }
+
+    console.log('[SCROLL] ✓ Header animations initialized');
 }
 
 // Achievement Stats Scroll Animations - Cards with Curved Motion
@@ -140,30 +178,31 @@ function initAchievementScrollAnimations() {
 
         const fromRight = index % 2 === 1;
 
-        window.gsap.set(block, {
-            x: fromRight ? 120 : -120,
-            y: 60,
-            opacity: 0,
-            scale: 0.92,
-            rotation: fromRight ? 6 : -6
-        });
-
-        window.gsap.to(block, {
-            x: 0,
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            rotation: 0,
-            duration: 0.9,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: block,
-                start: 'top 80%',
-                end: 'top 30%',
-                scrub: 1.1,
-                once: false
+        // Scroll-tied motion matching the gallery feel: far outside → home position, reverses on scroll up
+        window.gsap.fromTo(block,
+            {
+                x: fromRight ? 320 : -320,
+                y: 120,
+                opacity: 0,
+                scale: 0.92,
+                rotation: fromRight ? 12 : -12
+            },
+            {
+                x: 0,
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                rotation: 0,
+                ease: "power2.inOut",
+                scrollTrigger: {
+                    trigger: block,
+                    start: 'top 85%',
+                    end: 'top 25%',
+                    scrub: 1.4,
+                    once: false
+                }
             }
-        });
+        );
 
         achievementAnimationCount++;
         console.log('[SCROLL] Achievement block', index, '- curve from', fromRight ? 'right' : 'left');
@@ -220,7 +259,7 @@ function initMarqueeScrollAnimations() {
     console.log('[SCROLL] ✓ Marquee loop animations created:', marqueeAnimationCount);
 }
 
-// Dribbble posts (last 6 images) with side-based curved motion
+// Gallery posts (6 images) - scroll-controlled slide to full left/right
 function initDribbbleScrollAnimations() {
     console.log('[SCROLL] initDribbbleScrollAnimations called');
 
@@ -236,6 +275,7 @@ function initDribbbleScrollAnimations() {
     }
 
     const dribbblePosts = document.querySelectorAll('.tr__home__dribbble__post');
+    const dribbbleSection = document.querySelector('.tr__home__dribbble');
 
     if (dribbblePosts.length === 0) {
         console.log('[SCROLL] No dribbble posts found, retrying in 300ms...');
@@ -251,44 +291,42 @@ function initDribbbleScrollAnimations() {
         }
         post.dataset.animInit = '1';
 
-        const moveRight = index % 2 === 1; // right column moves right on scroll, left column moves left
-        const targetX = moveRight ? 320 : -320;
-        const targetRot = moveRight ? 8 : -8;
+        // Alternate direction: left column slides full left, right column slides full right
+        const slideRight = index % 2 === 1;
+        const fullDistance = slideRight ? 300 : -300;
+        const rotation = slideRight ? 20 : -20;
 
-        // Start centered/visible and push outward as you scroll (reverses previous in-to-center motion)
-        window.gsap.fromTo(post,
-            {
-                x: 0,
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                rotation: 0
-            },
-            {
-                x: targetX,
-                y: -20,
-                opacity: 1,
-                scale: 0.96,
-                rotation: targetRot,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: post,
-                    start: 'top 85%',
-                    end: 'top 35%',
-                    scrub: 1.2,
-                    once: false
-                }
+        // Set initial state at center
+        window.gsap.set(post, {
+            x: 0,
+            y: 0,
+            rotation: 0,
+            scale: 1
+        });
+
+        // Scroll-controlled animation: slides to full distance on scroll down, returns on scroll up
+        window.gsap.to(post, {
+            x: fullDistance,
+            y: -60,
+            rotation: rotation,
+            scale: 0.95,
+            ease: "power2.inOut",
+            scrollTrigger: {
+                trigger: dribbbleSection || post,
+                start: 'top 70%',
+                end: 'bottom 20%',
+                scrub: 2,
+                once: false
             }
-        );
+        });
 
         dribbbleAnimationCount++;
-        console.log('[SCROLL] Dribbble post', index, '- push toward', moveRight ? 'right' : 'left');
+        console.log('[SCROLL] Gallery post', index, '- scroll-controlled slide to full', slideRight ? 'right' : 'left');
     });
 
     if (window.gsap.plugins?.ScrollTrigger) {
         window.gsap.plugins.ScrollTrigger.refresh();
-        console.log('[SCROLL] ✓ Dribbble animations created:', dribbbleAnimationCount, 'and ScrollTrigger refreshed');
+        console.log('[SCROLL] ✓ Gallery animations created:', dribbbleAnimationCount, 'and ScrollTrigger refreshed');
     }
 }
 
@@ -296,19 +334,23 @@ function initDribbbleScrollAnimations() {
 if (document.readyState === 'complete' || document.readyState === 'interactive') {
     console.log('[SCROLL] DOM ready, initializing animations');
     setTimeout(() => {
+        initHeaderScrollAnimations();
         initProjectScrollAnimations();
         initAchievementScrollAnimations();
         initDribbbleScrollAnimations();
         initMarqueeScrollAnimations();
+        initVideoScrollAnimation();
     }, 100);
 } else {
     document.addEventListener('DOMContentLoaded', () => {
         console.log('[SCROLL] DOMContentLoaded fired, initializing animations');
         setTimeout(() => {
+            initHeaderScrollAnimations();
             initProjectScrollAnimations();
             initAchievementScrollAnimations();
             initDribbbleScrollAnimations();
             initMarqueeScrollAnimations();
+            initVideoScrollAnimation();
         }, 100);
     });
 }
@@ -320,9 +362,70 @@ window.addEventListener('load', () => {
         if (window.gsap?.plugins?.ScrollTrigger) {
             window.gsap.plugins.ScrollTrigger.refresh();
         }
+        initHeaderScrollAnimations();
         initProjectScrollAnimations();
         initAchievementScrollAnimations();
         initDribbbleScrollAnimations();
         initMarqueeScrollAnimations();
+        initVideoScrollAnimation();
     }, 200);
 });
+
+// Video Scroll Animation - Expand video as user scrolls
+function initVideoScrollAnimation() {
+    console.log('[SCROLL] initVideoScrollAnimation called');
+    
+    if (!window.gsap) {
+        console.log('[SCROLL] GSAP not available yet for video, retrying in 200ms...');
+        setTimeout(initVideoScrollAnimation, 200);
+        return;
+    }
+    
+    if (!window.gsap.plugins?.ScrollTrigger) {
+        console.log('[SCROLL] ScrollTrigger not registered for video, registering now...');
+        window.gsap.registerPlugin(window.gsap.plugins?.ScrollTrigger || ScrollTrigger);
+    }
+    
+    const videoWrapper = document.querySelector('#video');
+    const video = videoWrapper?.querySelector('video');
+    
+    if (!video) {
+        console.log('[SCROLL] Video element not found, retrying in 300ms...');
+        setTimeout(initVideoScrollAnimation, 300);
+        return;
+    }
+    
+    console.log('[SCROLL] ✓ Video element found, creating scroll animation');
+    
+    // Initial state: small video with rounded corners
+    window.gsap.set(video, {
+        width: '60%',
+        maxWidth: '500px',
+        borderRadius: '1.5rem'
+    });
+    
+    // Animate to large size on scroll down
+    window.gsap.to(video, {
+        width: '100%',
+        maxWidth: '100%',
+        borderRadius: '1.5rem',
+        duration: 1.2,
+        ease: "power3.out",
+        scrollTrigger: {
+            trigger: videoWrapper,
+            start: 'top 100%',
+            end: 'center 50%',
+            scrub: 2,
+            once: false
+        }
+    });
+    
+    if (window.gsap.plugins?.ScrollTrigger) {
+        window.gsap.plugins.ScrollTrigger.refresh();
+        console.log('[SCROLL] ✓ Video scroll animation created and ScrollTrigger refreshed');
+    }
+}
+
+// Initialize video animation
+initVideoScrollAnimation();
+
