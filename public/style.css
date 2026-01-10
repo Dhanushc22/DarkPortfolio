@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");@font-face {
+@font-face {
     font-family: "Dirtyline 36Daysoftype 2022";
     src: url(/fonts/Dirtyline36Daysoftype2022-Reg.eot);
     src: url(/fonts/Dirtyline36Daysoftype2022-Reg.eot?#iefix) format("embedded-opentype"),url(/fonts/Dirtyline36Daysoftype2022-Reg.woff2) format("woff2"),url(/fonts/Dirtyline36Daysoftype2022-Reg.woff) format("woff"),url(/fonts/Dirtyline36Daysoftype2022-Reg.ttf) format("truetype");
@@ -208,7 +208,7 @@ img,video {
 }
 
 html {
-    font-family: Syne,sans-serif;
+    font-family: 'DM Mono',monospace;
     font-size: 1vw;
     font-variant-numeric: lining-nums
 }
@@ -311,13 +311,13 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 h1 {
-    font-family: "Dirtyline 36Daysoftype 2022";
+    font-family: 'DM Mono',monospace;
     font-size: 5.5rem;
     line-height: 5rem
 }
 
 h1,h1.small {
-    letter-spacing: -2px
+    letter-spacing: 8px
 }
 
 h1.small {
@@ -335,7 +335,7 @@ h1.small {
 }
 
 .tr__services__blocks h2,.tr__work__image__box__wrapper h2,.tr__work__info h2,.tr__work__next h2 {
-    font-family: "Dirtyline 36Daysoftype 2022";
+    font-family: 'DM Mono',monospace;
     font-size: 6.125rem;
     line-height: 5.5rem;
     letter-spacing: -2px
@@ -353,11 +353,11 @@ h1.small {
 }
 
 .tr__process__step h2,h2 {
-    font-family: Syne,sans-serif
+    font-family: 'DM Mono',monospace
 }
 
 .tr__text__marquee__wrapper .tr__marquee__item h3,.tr__text__marquee__wrapper .tr__marquee__item__rev h3,h3 {
-    font-family: "Dirtyline 36Daysoftype 2022";
+    font-family: 'DM Mono',monospace;
     font-size: 8rem;
     line-height: 7rem;
     letter-spacing: -5px
@@ -381,19 +381,19 @@ h1.small {
 }
 
 h4 {
-    font-family: Syne,sans-serif;
+    font-family: 'DM Mono',monospace;
     font-size: 1rem;
     line-height: 1.6rem
 }
 
 h5 {
-    font-family: Syne,sans-serif;
+    font-family: 'DM Mono',monospace;
     font-size: 1.25rem;
     line-height: 1.6rem
 }
 
 h6 {
-    font-family: Syne,sans-serif
+    font-family: 'DM Mono',monospace
 }
 
 h6,p {
@@ -752,7 +752,7 @@ h6,p {
 }
 
 label {
-    font-family: Syne,sans-serif;
+    font-family: 'DM Mono',monospace;
     font-size: .85rem;
     line-height: 1.5rem;
     margin-bottom: 1rem;
@@ -783,7 +783,7 @@ sub,sup {
 }
 
 input[type=email],input[type=password],input[type=text],textarea {
-    font-family: Syne,sans-serif;
+    font-family: 'DM Mono',monospace;
     outline: none;
     border-color: rgba(224,238,238,.7);
     background: rgba(31,32,34,.4);
@@ -878,7 +878,7 @@ textarea {
 }
 
 .select-dropdown {
-    font-family: Syne,sans-serif;
+    font-family: 'DM Mono',monospace;
     outline: none;
     position: relative;
     display: inline-block;
@@ -1214,7 +1214,7 @@ input[type=email]::selection,input[type=password]::selection,input[type=text]::s
 }
 
 .button,button {
-    font-family: Syne,sans-serif;
+    font-family: 'DM Mono',monospace;
     font-size: 1rem;
     line-height: 1.188rem;
     position: relative;
@@ -2717,7 +2717,9 @@ footer>.tr__footer__wrapper>.tr__home__achieved__container {
     z-index: 0;
     display: inline-block;
     border-radius: 1.5rem;
-    padding: 3.5rem
+    padding: 5rem 4rem;
+    min-height: 320px;
+    min-width: 380px
 }
 
 .tr__home__achieved__block:after {
@@ -2738,7 +2740,8 @@ footer>.tr__footer__wrapper>.tr__home__achieved__container {
 
 @media (min-width: 1440px) and (max-width:1536px) {
     .tr__home__achieved__block {
-        padding:3rem
+        padding:4.5rem 3.5rem;
+        min-height: 300px
     }
 }
 
@@ -2867,7 +2870,7 @@ footer>.tr__footer__wrapper>.tr__home__achieved__container {
 }
 
 .tr__home__achieved__category {
-    font-family: "Dirtyline 36Daysoftype 2022";
+    font-family: 'DM Mono', monospace;
     font-size: 1rem;
     line-height: 1.3rem;
     transition: all .5s ease;

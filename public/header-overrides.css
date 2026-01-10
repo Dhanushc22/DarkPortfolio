@@ -1,0 +1,21 @@
+/* Header letter-spacing overrides without changing font sizes */
+:root {
+  --header-letter-spacing: 0em;
+}
+
+/* Apply uniform tracking to all major headers */
+h1, h1.small,
+h2, h2.small,
+h3, h3.small,
+.tr__section__title h3,
+.tr__text__marquee__wrapper .tr__marquee__item h3,
+.tr__text__marquee__wrapper .tr__marquee__item__rev h3 {
+  letter-spacing: var(--header-letter-spacing) !important;
+}
+
+/* Ensure nested spans inherit the same tracking */
+.tr__banner__content h1 span,
+.tr__work__image__box__wrapper h2 span,
+h3 > span {
+  letter-spacing: inherit !important;
+}

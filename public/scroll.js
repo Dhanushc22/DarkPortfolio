@@ -44,21 +44,21 @@ function initProjectScrollAnimations() {
             return;
         }
         
-        // Scroll-tied from→to animation (mirrors achievements/internship logic): outside → home, reverses on scroll up
+        // Scroll-tied from→to animation matching achievements/internship exactly
         const fromRight = index % 2 === 1;
         window.gsap.fromTo(workImage,
             {
                 x: fromRight ? 320 : -320,
                 y: 120,
                 opacity: 0,
-                scale: 0.92,
+                scale: 0.85,
                 rotation: fromRight ? 12 : -12
             },
             {
                 x: 0,
                 y: 0,
                 opacity: 1,
-                scale: 1,
+                scale: 0.85,
                 rotation: 0,
                 ease: "power2.inOut",
                 scrollTrigger: {
@@ -112,28 +112,29 @@ function initHeaderScrollAnimations() {
         const fromLeft = index % 2 === 0;
         const startX = fromLeft ? -200 : 200;
 
-        // Set initial state: off-screen and dark
-        window.gsap.set(span, {
-            x: startX,
-            opacity: 0.3,
-            color: '#444444'
-        });
-
-        // Create animation timeline
-        window.gsap.to(span, {
-            x: 0,
-            opacity: 1,
-            color: '#ffffff',
-            ease: 'power2.out',
-            scrollTrigger: {
-                trigger: headerSection,
-                start: 'top 70%',
-                end: 'top 20%',
-                scrub: 1,
-                onEnter: () => console.log('[SCROLL] Header span', index, 'entering from', fromLeft ? 'left' : 'right'),
-                onLeaveBack: () => console.log('[SCROLL] Header span', index, 'leaving back')
+        // Create scroll-controlled animation that reverses on scroll up
+        window.gsap.fromTo(span,
+            {
+                x: startX,
+                opacity: 0.3,
+                color: '#444444'
+            },
+            {
+                x: 0,
+                opacity: 1,
+                color: '#ffffff',
+                ease: 'power2.inOut',
+                scrollTrigger: {
+                    trigger: headerSection,
+                    start: 'top 70%',
+                    end: 'top 20%',
+                    scrub: 1,
+                    once: false,
+                    onEnter: () => console.log('[SCROLL] Header span', index, 'entering from', fromLeft ? 'left' : 'right'),
+                    onLeaveBack: () => console.log('[SCROLL] Header span', index, 'leaving back')
+                }
             }
-        });
+        );
     });
 
     if (window.gsap.plugins?.ScrollTrigger) {
@@ -141,6 +142,86 @@ function initHeaderScrollAnimations() {
     }
 
     console.log('[SCROLL] ✓ Header animations initialized');
+}
+
+// Section Title + Subheader Lines Animations (for all sections)
+function initSectionHeaderTextAnimations() {
+    console.log('[SCROLL] initSectionHeaderTextAnimations called');
+
+    if (!window.gsap) {
+        console.log('[SCROLL] GSAP not available yet for section headers, retrying in 200ms...');
+        setTimeout(initSectionHeaderTextAnimations, 200);
+        return;
+    }
+
+    if (!window.gsap.plugins?.ScrollTrigger) {
+        console.log('[SCROLL] ScrollTrigger not registered for section headers, registering now...');
+        window.gsap.registerPlugin(window.gsap.plugins?.ScrollTrigger || ScrollTrigger);
+    }
+
+    const titleSections = document.querySelectorAll('.tr__section .tr__section__title');
+    if (!titleSections.length) {
+        console.log('[SCROLL] No section titles found, retrying in 300ms...');
+        setTimeout(initSectionHeaderTextAnimations, 300);
+        return;
+    }
+
+    let count = 0;
+    titleSections.forEach((section, sIndex) => {
+        if (section.dataset.animInit === '1') return;
+        section.dataset.animInit = '1';
+
+        // Animate H3 header spans (left/right slide, reversible)
+        const h3Spans = section.querySelectorAll('h3.uppercase span');
+        h3Spans.forEach((span, i) => {
+            const fromLeft = (i % 2) === 0; // alternate for visual rhythm
+            const startX = fromLeft ? -160 : 160;
+            // ensure transforms apply on inline elements
+            window.gsap.set(span, { display: 'inline-block', willChange: 'transform, opacity' });
+            window.gsap.fromTo(span,
+                { x: startX, opacity: 0.2, color: '#444444' },
+                {
+                    x: 0, opacity: 1, color: '#ffffff', ease: 'none',
+                    scrollTrigger: {
+                        trigger: span, // animate relative to each span
+                        start: 'top 95%',
+                        end: '+=600', // longer range = slower movement
+                        scrub: 2.5,   // higher scrub = slower, smoother
+                        once: false,
+                        invalidateOnRefresh: true
+                    }
+                }
+            );
+            count++;
+        });
+
+        // Animate description lines under headers (h4.tr__heading__animation .tr__line)
+        const lines = section.querySelectorAll('.tr__heading__animation .tr__line');
+        lines.forEach((line, i) => {
+            const startY = 36;
+            window.gsap.set(line, { willChange: 'transform, opacity' });
+            window.gsap.fromTo(line,
+                { y: startY, opacity: 0.0, color: '#626262' },
+                {
+                    y: 0, opacity: 1, color: '#cfcfcf', ease: 'none',
+                    scrollTrigger: {
+                        trigger: line, // animate relative to each line
+                        start: 'top 95%',
+                        end: '+=520',  // longer range
+                        scrub: 2.5,    // slower scrub
+                        once: false,
+                        invalidateOnRefresh: true
+                    }
+                }
+            );
+            count++;
+        });
+    });
+
+    if (window.gsap.plugins?.ScrollTrigger) {
+        window.gsap.plugins.ScrollTrigger.refresh();
+        console.log('[SCROLL] ✓ Section header text animations created:', count);
+    }
 }
 
 // Achievement Stats Scroll Animations - Cards with Curved Motion
@@ -335,6 +416,7 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
     console.log('[SCROLL] DOM ready, initializing animations');
     setTimeout(() => {
         initHeaderScrollAnimations();
+        initSectionHeaderTextAnimations();
         initProjectScrollAnimations();
         initAchievementScrollAnimations();
         initDribbbleScrollAnimations();
@@ -346,6 +428,7 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
         console.log('[SCROLL] DOMContentLoaded fired, initializing animations');
         setTimeout(() => {
             initHeaderScrollAnimations();
+            initSectionHeaderTextAnimations();
             initProjectScrollAnimations();
             initAchievementScrollAnimations();
             initDribbbleScrollAnimations();
@@ -363,6 +446,7 @@ window.addEventListener('load', () => {
             window.gsap.plugins.ScrollTrigger.refresh();
         }
         initHeaderScrollAnimations();
+            initSectionHeaderTextAnimations();
         initProjectScrollAnimations();
         initAchievementScrollAnimations();
         initDribbbleScrollAnimations();
@@ -397,28 +481,27 @@ function initVideoScrollAnimation() {
     
     console.log('[SCROLL] ✓ Video element found, creating scroll animation');
     
-    // Initial state: small video with rounded corners
-    window.gsap.set(video, {
-        width: '60%',
-        maxWidth: '500px',
-        borderRadius: '1.5rem'
-    });
-    
-    // Animate to large size on scroll down
-    window.gsap.to(video, {
-        width: '100%',
-        maxWidth: '100%',
-        borderRadius: '1.5rem',
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-            trigger: videoWrapper,
-            start: 'top 100%',
-            end: 'center 50%',
-            scrub: 2,
-            once: false
+    // Animate video size with fromTo for proper reversing on scroll up
+    window.gsap.fromTo(video,
+        {
+            width: '60%',
+            maxWidth: '500px',
+            borderRadius: '1.5rem'
+        },
+        {
+            width: '100%',
+            maxWidth: '100%',
+            borderRadius: '1.5rem',
+            ease: "power2.inOut",
+            scrollTrigger: {
+                trigger: videoWrapper,
+                start: 'top 100%',
+                end: 'center 50%',
+                scrub: 2,
+                once: false
+            }
         }
-    });
+    );
     
     if (window.gsap.plugins?.ScrollTrigger) {
         window.gsap.plugins.ScrollTrigger.refresh();
