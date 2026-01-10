@@ -44,8 +44,16 @@ function initProjectScrollAnimations() {
             return;
         }
         
-        // Scroll-tied from→to animation matching achievements/internship exactly
-        const fromRight = index % 2 === 1;
+        // Determine side by element position: images on right come from right; left from left
+        let fromRight = false;
+        try {
+            const rect = workImage.getBoundingClientRect();
+            const viewportW = window.innerWidth || document.documentElement.clientWidth || 1024;
+            const centerX = rect.left + rect.width / 2;
+            fromRight = centerX > viewportW / 2;
+        } catch(e) {
+            fromRight = index % 2 === 1; // fallback to alternating
+        }
         window.gsap.fromTo(workImage,
             {
                 x: fromRight ? 320 : -320,
@@ -63,10 +71,13 @@ function initProjectScrollAnimations() {
                 ease: "power2.inOut",
                 scrollTrigger: {
                     trigger: item,
-                    start: 'top 85%',
-                    end: 'top 25%',
-                    scrub: 1.4,
-                    once: false
+                    start: 'center 75%',
+                    end: 'center 25%',
+                    scrub: 1.5,
+                    once: false,
+                    invalidateOnRefresh: true,
+                    toggleActions: 'play reverse play reverse',
+                    markers: false
                 }
             }
         );
@@ -277,10 +288,11 @@ function initAchievementScrollAnimations() {
                 ease: "power2.inOut",
                 scrollTrigger: {
                     trigger: block,
-                    start: 'top 85%',
-                    end: 'top 25%',
-                    scrub: 1.4,
-                    once: false
+                    start: 'center 75%',
+                    end: 'center 25%',
+                    scrub: 1.5,
+                    once: false,
+                    toggleActions: 'play reverse play reverse'
                 }
             }
         );

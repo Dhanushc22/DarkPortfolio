@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Dhanush C</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="stylesheet" href="/fonts.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Mono', monospace;
+            background: #121315;
+            color: #e0eeee;
+            line-height: 1.6;
+            padding: 2rem;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        .header {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(197, 252, 252, 0.2);
+        }
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, #c5fcfc 0%, #e0eeee 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+        .contact-info { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 1rem; }
+        .contact-info a { color: #c5fcfc; text-decoration: none; transition: opacity 0.3s; }
+        .contact-info a:hover { opacity: 0.7; }
+        
+        .section { margin-bottom: 3rem; }
+        .section h2 {
+            font-size: 1.8rem;
+            color: #c5fcfc;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        .bio { font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem; }
+        
+        .education-item, .experience-item {
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+            border-left: 2px solid rgba(197, 252, 252, 0.3);
+        }
+        .education-item h3, .experience-item h3 { color: #c5fcfc; margin-bottom: 0.5rem; }
+        .education-item .details, .experience-item .details { color: #9fb4b4; margin-bottom: 0.5rem; }
+        
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+        .skill-category h4 { color: #c5fcfc; margin-bottom: 0.8rem; }
+        .skill-category ul { list-style: none; }
+        .skill-category li {
+            padding: 0.3rem 0;
+            color: #e0eeee;
+            position: relative;
+            padding-left: 1rem;
+        }
+        .skill-category li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #c5fcfc;
+        }
+        
+        .certifications { display: flex; flex-direction: column; gap: 0.8rem; }
+        .certification {
+            padding: 0.8rem;
+            background: rgba(197, 252, 252, 0.05);
+            border-radius: 0.5rem;
+            border-left: 3px solid #c5fcfc;
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: rgba(197, 252, 252, 0.1);
+            color: #c5fcfc;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+            margin-top: 2rem;
+        }
+        .back-button:hover {
+            background: rgba(197, 252, 252, 0.2);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Dhanush C</h1>
+            <p style="font-size: 1.2rem; color: #9fb4b4;">MCA Student & Application Developer</p>
+            <div class="contact-info">
+                <a href="mailto:dhanushc092@gmail.com">📧 dhanushc092@gmail.com</a>
+                <a href="tel:+916362638287">📱 +91-6362638287</a>
+                <a href="https://github.com/Dhanushc22" target="_blank">🔗 GitHub</a>
+                <a href="https://linkedin.com/in/dhanushc22" target="_blank">🔗 LinkedIn</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>About Me</h2>
+            <p class="bio">
+                I'm an MCA professional and application developer with a strong focus on building reliable, user-centric digital products. 
+                I enjoy transforming complex ideas into clean, scalable solutions with a versatile approach to modern technologies.
+                I work across the full development lifecycle, from designing intuitive interfaces to building reliable backend logic.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Master of Computer Applications (MCA)</h3>
+                <p class="details">Acharya Institute of Technology, Bengaluru</p>
+                <p class="details">CGPA: 8.2 (Ongoing)</p>
+            </div>
+            <div class="education-item">
+                <h3>Bachelor of Computer Applications (BCA)</h3>
+                <p class="details">Vidyavardhaka First Grade College, Mysuru-mangaluru, Bangalore</p>
+                <p class="details">CGPA: 7.2</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Software Development Internship</h3>
+                <p class="details">QuBitSoft Technologies LLP</p>
+                <p class="details">Part-Time (4 Months) | Jan 2024 - Apr 2024</p>
+                <ul style="margin-top: 0.8rem; padding-left: 2rem;">
+                    <li>Developed a certified internship project based on using Python.</li>
+                    <li>Engaged in essential internship in Python for model training.</li>
+                    <li>Built and tested clever detection models using TensorFlow and OpenCV.</li>
+                    <li>Studied several deep learning methods and choose the most appropriate one for CV.</li>
+                    <li>Worked with the team to document results and improve model performance.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Programming Languages</h4>
+                    <ul>
+                        <li>C</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Frameworks & Libraries</h4>
+                    <ul>
+                        <li>React</li>
+                        <li>Next.js</li>
+                        <li>Flutter</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Databases</h4>
+                    <ul>
+                        <li>Firebase</li>
+                        <li>MongoDB</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & Platforms</h4>
+                    <ul>
+                        <li>Git, GitHub</li>
+                        <li>VS Code, Figma</li>
+                        <li>Firebase</li>
+                        <li>Cloud (Azure/OCI)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Certifications</h2>
+            <div class="certifications">
+                <div class="certification">
+                    <strong>Oracle Cloud Infrastructure 2024 Certified Developer Professional</strong>
+                    <p style="color: #9fb4b4; margin-top: 0.3rem;">Sep 2025</p>
+                </div>
+                <div class="certification">
+                    <strong>Google Professional Cloud Security Engineer Certification</strong>
+                    <p style="color: #9fb4b4; margin-top: 0.3rem;">Nov 2025</p>
+                </div>
+                <div class="certification">
+                    <strong>AWS — Introduction to Generative AI: Art of the Possible</strong>
+                    <p style="color: #9fb4b4; margin-top: 0.3rem;">Aug 2025</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Core CS Concepts</h2>
+            <div class="skill-category">
+                <ul>
+                    <li>Data Structures & Algorithms (DSA)</li>
+                    <li>Object-Oriented Programming (OOP)</li>
+                </ul>
+            </div>
+        </div>
+
+        <a href="/" class="back-button">← Back to Home</a>
+    </div>
+
+    <script>
+        // Guard cursor element initialization
+        if (!document.querySelector('.tr__cursor')) {
+            const div = document.createElement('div');
+            div.className = 'tr__cursor';
+            div.style.cssText = 'display:none;';
+            document.body.appendChild(div);
+        }
+    </script>
+</body>
+</html>

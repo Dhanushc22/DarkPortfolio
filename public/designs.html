@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Designs & Art - Dhanush C</title>
+    <link rel="stylesheet" href="/fonts.css">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <style>
+        * { box-sizing: border-box; }
+        :root {
+            --bg: #0b0c10;
+            --panel: rgba(255,255,255,0.04);
+            --border: rgba(197,252,252,0.14);
+            --text: #e8f7f7;
+            --muted: #9bb7b7;
+            --accent: #c5fcfc;
+            --card: rgba(197,252,252,0.05);
+        }
+        body {
+            margin: 0;
+            font-family: 'DM Mono', monospace;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding: 32px 20px 64px;
+        }
+        .page { max-width: 1200px; margin: 0 auto; }
+        header.hero {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 32px;
+            display: grid;
+            gap: 20px;
+        }
+        .eyebrow { letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); font-size: 12px; }
+        h1 { font-size: clamp(2.2rem, 4vw, 3rem); margin: 0; }
+        p.lead { color: var(--muted); margin: 0; max-width: 720px; }
+        .tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+        .tag { padding: 6px 12px; border: 1px solid var(--border); border-radius: 999px; color: var(--text); font-size: 12px; }
+
+        section { margin-top: 36px; }
+        .section-title { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+        .section-title .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+        .grid { display: grid; gap: 16px; }
+        .grid.cols-3 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+        .grid.cols-2 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px 18px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .card h3 { margin: 0; font-size: 1.1rem; }
+        .card p { margin: 0; color: var(--muted); }
+        .pill-row { display: flex; flex-wrap: wrap; gap: 8px; }
+        .pill { font-size: 12px; padding: 6px 10px; border-radius: 10px; background: rgba(197,252,252,0.08); border: 1px solid var(--border); color: var(--text); }
+
+        .cta {
+            display: grid;
+            gap: 12px;
+            background: linear-gradient(135deg, rgba(197,252,252,0.08), rgba(197,252,252,0.02));
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            align-items: center;
+        }
+        .cta strong { font-size: 1.3rem; }
+        .cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; border-radius: 12px; border: 1px solid var(--border); background: rgba(197,252,252,0.07); color: var(--text); text-decoration: none; font-weight: 600; transition: transform 0.15s ease, border-color 0.15s ease; }
+        .btn:hover { transform: translateY(-2px); border-color: var(--accent); }
+
+        .list { color: var(--muted); margin: 0; padding-left: 18px; }
+        .list li { margin: 6px 0; }
+
+        .footer-note { margin-top: 32px; color: var(--muted); font-size: 0.95rem; text-align: center; }
+
+        @media (max-width: 640px) {
+            body { padding: 22px 16px 48px; }
+            .cta-actions { flex-direction: column; }
+            .btn { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <div class="eyebrow">Design & Art · Available for product, web, and app work</div>
+            <h1>Design systems, product UI, expressive art — crafted for clarity and emotion.</h1>
+            <p class="lead">I blend structured product thinking with playful visuals. From interface flows to launch assets, I design experiences that move people and move metrics.</p>
+            <div class="tags">
+                <span class="tag">Product UI/UX</span>
+                <span class="tag">Brand & Visual</span>
+                <span class="tag">Motion & Microcopy</span>
+                <span class="tag">Marketing Creatives</span>
+                <span class="tag">Design Systems</span>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title"><span class="dot"></span><h2>Signature skills</h2></div>
+            <div class="grid cols-3">
+                <div class="card"><h3>Product & Apps</h3><p>Flows, UI states, empty/error handling, responsive layouts for web & mobile.</p><div class="pill-row"><span class="pill">Figma</span><span class="pill">Design systems</span><span class="pill">Prototyping</span></div></div>
+                <div class="card"><h3>Brand & Visual</h3><p>Identity, typography, palettes, iconography, and cohesive asset packs.</p><div class="pill-row"><span class="pill">Logo/mark</span><span class="pill">Art direction</span><span class="pill">Illustration</span></div></div>
+                <div class="card"><h3>Launch & Marketing</h3><p>Landing pages, campaign creatives, deck polish, and storytelling visuals.</p><div class="pill-row"><span class="pill">Campaigns</span><span class="pill">Motion snippets</span><span class="pill">Ads & socials</span></div></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title"><span class="dot"></span><h2>What I deliver</h2></div>
+            <div class="grid cols-2">
+                <div class="card">
+                    <h3>Apps & websites</h3>
+                    <ul class="list">
+                        <li>UX flows, wireframes, UI design, and clickable prototypes</li>
+                        <li>Design systems with tokens, grids, and component libraries</li>
+                        <li>Accessibility-first layouts and motion that respects focus</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Product & marketing design</h3>
+                    <ul class="list">
+                        <li>Onboarding, paywalls, dashboards, and growth surfaces</li>
+                        <li>Campaign visuals, social assets, decks, and launch kits</li>
+                        <li>Art-led visuals for product storytelling and brand moments</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title"><span class="dot"></span><h2>Recent focuses</h2></div>
+            <div class="grid cols-3">
+                <div class="card"><h3>Safer flights</h3><p>Designing clear status UI, alerts, and mapping for flight tracking.</p></div>
+                <div class="card"><h3>Health journeys</h3><p>Crafting empathetic flows for symptom tracking and wellness plans.</p></div>
+                <div class="card"><h3>Data with personality</h3><p>Turning analytics into approachable stories with minimal clutter.</p></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title"><span class="dot"></span><h2>Availability</h2></div>
+            <div class="cta">
+                <strong>Open for app, web, product design, and marketing collaborations.</strong>
+                <div class="cta-actions">
+                    <a class="btn" href="mailto:dhanushchandrashekar@gmail.com">Email for projects</a>
+                    <a class="btn" href="https://linkedin.com/in/dhanushc22" target="_blank" rel="noreferrer">Connect on LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="footer-note">Let’s build something crisp, usable, and a little bit memorable.</div>
+    </div>
+    <script>
+        // Guard cursor element initialization
+        if (!document.querySelector('.tr__cursor')) {
+            const div = document.createElement('div');
+            div.className = 'tr__cursor';
+            div.style.cssText = 'display:none;';
+            document.body.appendChild(div);
+        }
+    </script></body>
+</html>

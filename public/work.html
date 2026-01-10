@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Work - Dhanush C</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="stylesheet" href="/fonts.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Mono', monospace;
+            background: #121315;
+            color: #e0eeee;
+            padding: 2rem;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(90deg, #c5fcfc 0%, #e0eeee 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .subtitle { font-size: 1.2rem; color: #9fb4b4; margin-bottom: 3rem; }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .project-card {
+            background: rgba(197, 252, 252, 0.03);
+            border: 1px solid rgba(197, 252, 252, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card:hover {
+            border-color: rgba(197, 252, 252, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(197, 252, 252, 0.1);
+        }
+        
+        .project-card h2 {
+            font-size: 1.8rem;
+            color: #c5fcfc;
+            margin-bottom: 1rem;
+        }
+        .project-card p {
+            color: #9fb4b4;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .tech-tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(197, 252, 252, 0.1);
+            border-radius: 0.3rem;
+            font-size: 0.85rem;
+            color: #c5fcfc;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        .project-link {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: rgba(197, 252, 252, 0.1);
+            color: #c5fcfc;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+        .project-link:hover {
+            background: rgba(197, 252, 252, 0.2);
+            transform: translateX(3px);
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: rgba(197, 252, 252, 0.1);
+            color: #c5fcfc;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+        .back-button:hover {
+            background: rgba(197, 252, 252, 0.2);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Recent Work</h1>
+        <p class="subtitle">Building real-world applications that solve actual problems</p>
+        
+        <div class="projects-grid">
+            <div class="project-card">
+                <h2>HealthWhisper</h2>
+                <p>
+                    AI-powered healthcare app for X-ray analysis and medical consultations. 
+                    Simplifies medical healthcare knowledge with AI-driven clinical insights and voice-based symptom consultation.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React Native</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">XML</span>
+                    <span class="tech-tag">API Integration</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Dhanushc22/HealthWhisper-" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h2>BinaryBox</h2>
+                <p>
+                    Secure offline Android app for file-to-binary conversion and restoration. 
+                    Generates encrypted application that converts file to binary successfully without server dependencies.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">XML</span>
+                    <span class="tech-tag">Android Studio</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Dhanushc22/BinaryBox" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h2>WhereIsMyFlight</h2>
+                <p>
+                    Real-time flight tracking with live status updates and smart notifications. 
+                    Developed a production-grade mobile application that tracks two-way flight status using IATA flight numbers.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React Native</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">REST APIs</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Dhanushc22/WhereIsMyFlight" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h2>HabitHub</h2>
+                <p>
+                    Gamified habit tracking application that converts daily tasks into a locally hosted server deploy with secure setup without server deposit.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Dhanushc22/Habithub" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h2>NeuroSync</h2>
+                <p>
+                    Organized application performance to support efficient processing via .env space and legacy Android devices.
+                    Technologies: Java, XML, Android Studio.
+                </p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">XML</span>
+                    <span class="tech-tag">Android Studio</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Dhanushc22/NueroSynk" target="_blank" class="project-link">View on GitHub →</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="/" class="back-button">← Back to Home</a>
+    </div>
+
+    <script>
+        // Guard cursor element initialization
+        if (!document.querySelector('.tr__cursor')) {
+            const div = document.createElement('div');
+            div.className = 'tr__cursor';
+            div.style.cssText = 'display:none;';
+            document.body.appendChild(div);
+        }
+    </script>
+</body>
+</html>

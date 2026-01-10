@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Dhanush C</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <link rel="stylesheet" href="/fonts.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'DM Mono', monospace;
+            background: #121315;
+            color: #e0eeee;
+            padding: 2rem;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(90deg, #c5fcfc 0%, #e0eeee 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        .subtitle { font-size: 1.2rem; color: #9fb4b4; margin-bottom: 3rem; }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background: rgba(197, 252, 252, 0.03);
+            border: 1px solid rgba(197, 252, 252, 0.1);
+            border-radius: 1rem;
+            padding: 2.5rem;
+            transition: all 0.3s;
+        }
+        .service-card:hover {
+            border-color: rgba(197, 252, 252, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(197, 252, 252, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .service-card h2 {
+            font-size: 1.8rem;
+            color: #c5fcfc;
+            margin-bottom: 1rem;
+        }
+        .service-card p {
+            color: #9fb4b4;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .service-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #e0eeee;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #c5fcfc;
+            font-weight: bold;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(197, 252, 252, 0.03);
+            border: 1px solid rgba(197, 252, 252, 0.1);
+            border-radius: 1rem;
+            margin-bottom: 3rem;
+        }
+        .cta-section h2 {
+            font-size: 2rem;
+            color: #c5fcfc;
+            margin-bottom: 1rem;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, rgba(197, 252, 252, 0.2), rgba(197, 252, 252, 0.1));
+            color: #c5fcfc;
+            text-decoration: none;
+            border-radius: 0.8rem;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(197, 252, 252, 0.2);
+            margin-top: 1rem;
+        }
+        .cta-button:hover {
+            background: linear-gradient(135deg, rgba(197, 252, 252, 0.3), rgba(197, 252, 252, 0.15));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(197, 252, 252, 0.2);
+        }
+        
+        .back-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: rgba(197, 252, 252, 0.1);
+            color: #c5fcfc;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+        .back-button:hover {
+            background: rgba(197, 252, 252, 0.2);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Services</h1>
+        <p class="subtitle">Transforming ideas into scalable digital solutions</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h2>Mobile App Development</h2>
+                <p>
+                    Building cross-platform mobile applications using React Native and Flutter. 
+                    Creating intuitive, performant apps that work seamlessly on iOS and Android.
+                </p>
+                <ul class="service-features">
+                    <li>Cross-platform development</li>
+                    <li>Native performance optimization</li>
+                    <li>API integration</li>
+                    <li>Real-time features</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h2>Web Development</h2>
+                <p>
+                    Crafting modern, responsive web applications using React, Next.js, and modern web technologies. 
+                    Focus on performance, accessibility, and user experience.
+                </p>
+                <ul class="service-features">
+                    <li>Responsive design</li>
+                    <li>Progressive web apps</li>
+                    <li>SEO optimization</li>
+                    <li>Modern frameworks</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h2>UI/UX Design</h2>
+                <p>
+                    Designing clean, intuitive interfaces that prioritize user experience. 
+                    Creating prototypes and interactive designs using modern design tools.
+                </p>
+                <ul class="service-features">
+                    <li>User research & testing</li>
+                    <li>Wireframing & prototyping</li>
+                    <li>Design systems</li>
+                    <li>Figma expertise</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h2>Backend Development</h2>
+                <p>
+                    Building scalable backend systems and APIs. 
+                    Working with modern databases and cloud platforms to ensure reliability and performance.
+                </p>
+                <ul class="service-features">
+                    <li>RESTful API design</li>
+                    <li>Database architecture</li>
+                    <li>Cloud deployment</li>
+                    <li>Authentication & security</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h2>AI/ML Integration</h2>
+                <p>
+                    Integrating AI and machine learning capabilities into applications. 
+                    Experience with TensorFlow, OpenCV, and modern AI APIs.
+                </p>
+                <ul class="service-features">
+                    <li>Computer vision</li>
+                    <li>Model integration</li>
+                    <li>AI API implementation</li>
+                    <li>Performance optimization</li>
+                </ul>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">☁️</div>
+                <h2>Cloud Solutions</h2>
+                <p>
+                    Deploying and managing applications on cloud platforms. 
+                    Certified in Azure and OCI, experienced with modern DevOps practices.
+                </p>
+                <ul class="service-features">
+                    <li>Cloud architecture</li>
+                    <li>CI/CD pipelines</li>
+                    <li>Serverless solutions</li>
+                    <li>Cost optimization</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Ready to Start Your Project?</h2>
+            <p style="color: #9fb4b4; font-size: 1.1rem;">Let's discuss how I can help bring your ideas to life</p>
+            <a href="/contact.html" class="cta-button">Get in Touch →</a>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="/" class="back-button">← Back to Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Guard cursor element initialization
+        if (!document.querySelector('.tr__cursor')) {
+            const div = document.createElement('div');
+            div.className = 'tr__cursor';
+            div.style.cssText = 'display:none;';
+            document.body.appendChild(div);
+        }
+    </script>
+</body>
+</html>
