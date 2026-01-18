@@ -8804,3 +8804,141 @@ footer>.tr__footer__wrapper>.tr__work__single__image__with__title h2 {
         transform: scaleY(0.7);
     }
 }
+
+/* Mobile Responsive Fixes */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+@media (max-width: 768px) {
+    /* Prevent horizontal scroll */
+    * {
+        max-width: 100vw;
+    }
+    
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+    }
+    
+    /* Container fixes */
+    .tr__container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        max-width: 100% !important;
+    }
+    
+    /* Section spacing */
+    .tr__section {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+    
+    /* Hero section */
+    .tr__hero {
+        padding: 2rem 1rem !important;
+    }
+    
+    /* Text wrapping */
+    h1, h2, h3, h4, h5, h6, p {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    /* Project cards */
+    .tr__home__projects__card {
+        margin: 1rem 0 !important;
+    }
+    
+    /* Gallery grid */
+    .tr__home__dribbble__posts {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+        padding: 0 1rem !important;
+    }
+    
+    /* Images */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Buttons */
+    .button {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.9rem !important;
+    }
+    
+    /* Header */
+    header {
+        padding: 1rem !important;
+    }
+    
+    /* Footer */
+    footer {
+        padding: 2rem 1rem !important;
+    }
+    
+    /* Achievement blocks - Fix overlapping text */
+    .tr__home__achieved__block {
+        padding: 1.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .tr__home__achieved__category {
+        font-size: 1.4em !important;
+        line-height: 1.3 !important;
+        margin-top: 1.5rem !important;
+        letter-spacing: 0.05em !important;
+    }
+    
+    .tr__home__achieved__number {
+        font-size: 3.5em !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .tr__home__achieved__block__wrapper {
+        gap: 0.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 3.5vw !important;
+    }
+    
+    .tr__container {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+    
+    /* Even smaller text for very small screens */
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    h2 {
+        font-size: 1.5rem !important;
+    }
+    
+    h3 {
+        font-size: 1.25rem !important;
+    }
+    
+    /* Achievement cards - smaller screens */
+    .tr__home__achieved__category {
+        font-size: 1.1em !important;
+        line-height: 1.4 !important;
+        margin-top: 1.2rem !important;
+    }
+    
+    .tr__home__achieved__number {
+        font-size: 2.8em !important;
+    }
+    
+    .tr__home__achieved__block {
+        padding: 1.2rem !important;
+    }
+}

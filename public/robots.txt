@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dhanush-dev-space.vercel.app/sitemap.xml
