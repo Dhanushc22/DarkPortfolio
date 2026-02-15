@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-contrasted">
+<head>
+    <meta charset="utf-8">
+    <title>Hire Dhanush C – MCA Professional & Application Developer</title>
+    <meta name="description" content="Hire Dhanush C, an MCA professional and application developer specializing in building reliable, user-centric digital products. View skills, experience, and contact information.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Dhanu Portfolio">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://dhanush-dev-space.vercel.app/hire">
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    <meta name="apple-mobile-web-app-title" content="DC Portfolio">
+
+    <meta name="theme-color" content="#160000">
+    <meta name="msapplication-navbutton-color" content="#160000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#160000">
+
+    <meta property="og:title" content="Hire Dhanush C – Software Developer">
+    <meta property="og:description" content="Professional software developer available for freelance work">
+    <meta property="og:url" content="https://dhanush-dev-space.vercel.app/hire">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="/fonts.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/textscroll.css">
+    <link rel="stylesheet" href="/header-overrides.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* CSS Variables */
+        :root {
+            --color-primary: #8b5cf6;
+            --color-primary-light: #a855f7;
+            --color-secondary: #160000;
+            --color-white: #fff0eb;
+            --color-accent: #d8b4fe;
+            --color-text-muted: #e0eeee;
+            --font-bigger: 'Bigger Display', sans-serif;
+            --font-editorial: 'Editorial New', serif;
+            --font-fraktion: 'Fraktion Mono', monospace;
+        }
+
+        /* Hide header */
+        header {
+            display: none;
+        }
+
+        /* Global layout */
+        body {
+            background-color: var(--color-primary);
+        }
+
+        .site-wrapper {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .h-hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 9rem 0 6rem;
+            text-align: center;
+            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+            color: var(--color-white);
+            min-height: auto;
+        }
+
+        .h-hero__container {
+            max-width: 100rem;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .h-hero__title {
+            font: 700 3rem / 1.1 var(--font-editorial);
+            text-transform: none;
+            margin: 0 0 2rem 0;
+            letter-spacing: -0.01em;
+            color: var(--color-white);
+            font-style: normal;
+        }
+
+        .h-hero__description {
+            font: 400 1.15rem / 1.5 var(--font-editorial);
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--color-white);
+        }
+
+        /* About Section */
+        .h-about {
+            padding: 3.5rem 0;
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+        }
+
+        .h-about__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .h-about__header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .h-about__grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        /* Section Titles */
+        .h-section-title {
+            font: 400 2.5rem / 1.1 var(--font-editorial);
+            margin: 0 0 2.5rem 0;
+            color: var(--color-primary);
+        }
+
+        .h-section-title.color-secondary {
+            color: var(--color-secondary);
+        }
+
+        .h-section-title.color-primary {
+            color: var(--color-primary);
+        }
+
+        /* Section Subtitles */
+        .h-section-subtitle {
+            font: 400 0.85rem / 1 var(--font-fraktion);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 0 0 1rem 0;
+            color: var(--color-primary);
+        }
+
+        .h-section-subtitle.text-light {
+            color: var(--color-white);
+        }
+
+        /* Text Block */
+        .h-text-block p {
+            font: 400 1rem / 1.6 var(--font-editorial);
+            margin: 0 0 1.2rem 0;
+            color: var(--color-white);
+        }
+
+        .h-text-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* List */
+        .h-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .h-list li {
+            font: 400 1rem / 1.8 var(--font-editorial);
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--color-white);
+            margin-bottom: 0.5rem;
+        }
+
+        .h-list li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+        }
+
+        /* Skills Section */
+        .h-skills {
+            padding: 3.5rem 0;
+            background-color: var(--color-primary);
+            color: var(--color-secondary);
+        }
+
+        .h-skills__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .h-skills__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            text-align: left;
+        }
+
+        .h-skills__grid .h-section-subtitle {
+            font-size: 0.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            padding: 0.35rem 0.7rem;
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 2rem;
+            font: 400 0.7rem / 1 var(--font-fraktion);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: var(--color-white);
+            transition: background-color 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background-color: rgba(255, 255, 255, 0.25);
+        }
+
+        .h-contact {
+            padding: 5rem 0;
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+        }
+
+        .h-contact__container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .h-contact__text {
+            font: 400 1rem / 1.7 var(--font-editorial);
+            margin-bottom: 1.5rem;
+            color: var(--color-white);
+        }
+
+        .h-contact__actions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .h-button {
+            display: inline-block;
+            padding: 0.7rem 1.8rem;
+            background-color: var(--color-primary);
+            color: var(--color-secondary);
+            border-radius: 0.35rem;
+            text-decoration: none;
+            font: 400 0.8rem / 1 var(--font-editorial);
+            text-transform: none;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .h-button:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        .h-button-outline {
+            display: inline-block;
+            padding: 0.7rem 1.8rem;
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 1.5px solid var(--color-primary);
+            border-radius: 2rem;
+            text-decoration: none;
+            font: 400 0.8rem / 1 var(--font-editorial);
+            text-transform: none;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .h-button-outline:hover {
+            background-color: var(--color-primary);
+            color: var(--color-secondary);
+            transform: translateY(-2px);
+        }
+
+        .h-socials {
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+        }
+
+        .h-socials a {
+            color: var(--color-white);
+            text-decoration: none;
+            font: 400 0.8rem / 1 var(--font-editorial);
+            text-transform: none;
+            letter-spacing: 0.02em;
+            transition: color 0.3s ease;
+        }
+
+        .h-socials a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Footer */
+        .h-footer {
+            padding: 1.5rem 0;
+            background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 100%);
+            color: var(--color-secondary);
+        }
+
+        .h-footer__container {
+            width: 100%;
+            margin: 0;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .h-footer__left {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .h-footer__left a {
+            color: var(--color-secondary);
+            text-decoration: none;
+            font: 400 0.75rem / 1 var(--font-fraktion);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: opacity 0.3s ease;
+            font-weight: 600;
+        }
+
+        .h-footer__left a:hover {
+            opacity: 0.7;
+        }
+
+        .h-footer__right {
+            text-align: right;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .h-hero {
+                padding: 8rem 0 5rem;
+                min-height: auto;
+            }
+
+            .h-hero__title {
+                font-size: 4rem;
+            }
+
+            .h-about__grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .h-skills__grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .h-section-title {
+                font-size: 2.5rem;
+            }
+
+            .h-footer__container {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .h-footer__left {
+                justify-content: center;
+            }
+
+            .h-footer__right {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .h-hero__title {
+                font-size: 2.75rem;
+            }
+
+            .h-skills__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .h-socials {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .h-footer__container {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .h-footer__left {
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .h-footer__right {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="site-wrapper js-site-wrapper">
+        <!-- Hero Section -->
+        <section class="h-hero">
+            <div class="h-hero__container">
+                <h1 class="h-hero__title">Let's Work Together</h1>
+                <p class="h-hero__description">I'm available for freelance projects and full-time opportunities</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="h-about">
+            <div class="h-about__container">
+                <div class="h-about__header">
+                    <h2 class="h-section-title">About Me</h2>
+                </div>
+
+                <div class="h-about__grid">
+                    <div class="h-about__col">
+                        <h3 class="h-section-subtitle">Who I Am</h3>
+                        <div class="h-text-block">
+                            <p>
+                                I'm Dhanush C, an MCA professional and application developer with a strong focus on building reliable, user-centric digital products. I enjoy transforming complex ideas into clean, scalable solutions with a versatile approach to modern technologies.
+                            </p>
+                            <p>
+                                My goal is to deliver high-quality, scalable applications that solve real-world problems and provide exceptional user experiences.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="h-about__col">
+                        <h3 class="h-section-subtitle">What I Do</h3>
+                        <ul class="h-list">
+                            <li>Full-stack web development</li>
+                            <li>Mobile app development (Android/iOS)</li>
+                            <li>Cloud-based solutions</li>
+                            <li>API development and integration</li>
+                            <li>Database design and optimization</li>
+                            <li>UI/UX implementation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separator -->
+        <div style="height: 2px; background: linear-gradient(90deg, transparent, rgba(197, 252, 252, 0.3), transparent); margin: 2rem 0;"></div>
+
+        <!-- Skills Section -->
+        <section class="h-skills">
+            <div class="h-skills__container">
+                <h2 class="h-section-title color-secondary">Technical Skills</h2>
+                <div class="h-skills__grid">
+                    <div class="skill-category">
+                        <h3 class="h-section-subtitle text-light">Frontend</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Vue.js</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">TypeScript</span>
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">Astro</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="h-section-subtitle text-light">Backend</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Spring Boot</span>
+                            <span class="skill-tag">Express.js</span>
+                            <span class="skill-tag">Django</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="h-section-subtitle text-light">Mobile</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">React Native</span>
+                            <span class="skill-tag">Flutter</span>
+                            <span class="skill-tag">Android</span>
+                            <span class="skill-tag">iOS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3 class="h-section-subtitle text-light">Database & Cloud</h3>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">PostgreSQL</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">AWS</span>
+                            <span class="skill-tag">Firebase</span>
+                            <span class="skill-tag">Docker</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separator -->
+        <div style="height: 2px; background: linear-gradient(90deg, transparent, rgba(197, 252, 252, 0.3), transparent); margin: 2rem 0;"></div>
+
+        <!-- Contact Section -->
+        <section class="h-contact">
+            <div class="h-contact__container">
+                <h2 class="h-section-title color-primary">Ready to Start Your Project?</h2>
+                <p class="h-contact__text">
+                    I'm always excited to work on new challenges and bring innovative ideas to life.
+                    Let's discuss your project and see how we can collaborate.
+                </p>
+                <div class="h-contact__actions">
+                    <a href="mailto:dhanush.c.s.dev@gmail.com" class="h-button">
+                        Send me an email
+                    </a>
+                    <a href="https://purple-portfolio-mu.vercel.app/" class="h-button-outline">
+                        Freelance Site
+                    </a>
+                    <div class="h-socials">
+                        <a href="https://github.com/Dhanushc22" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        <a href="https://www.linkedin.com/in/dhanush-c-s" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://leetcode.com/u/Dhanush22092003/" target="_blank" rel="noopener noreferrer">LeetCode</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="h-footer">
+            <div class="h-footer__container">
+                <div class="h-footer__left">
+                    <a href="https://github.com/Dhanushc22" target="_blank" rel="noopener noreferrer">GITHUB</a>
+                    <a href="https://www.linkedin.com/in/dhanush-c-s" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+                    <a href="https://leetcode.com/u/Dhanush22092003/" target="_blank" rel="noopener noreferrer">LEETCODE</a>
+                    <a href="mailto:dhanush.c.s.dev@gmail.com">EMAIL</a>
+                </div>
+                <div class="h-footer__right">
+                    <h3 style="margin: 0 0 0.35rem 0; font: 400 1.1rem / 1 var(--font-fraktion); color: var(--color-secondary); text-transform: uppercase; letter-spacing: 0.05em;">
+                        <span style="margin-right: 0.5rem;">◎</span>Dhanush C – Software Developer
+                    </h3>
+                    <p style="margin: 0; font: 400 0.85rem / 1 var(--font-editorial); color: var(--color-secondary); opacity: 0.8;">
+                        Bengaluru, India
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/app.js"></script>
+    <script src="/scroll.js"></script>
+    <script src="/cursor.js"></script>
+</body>
+</html>
+   

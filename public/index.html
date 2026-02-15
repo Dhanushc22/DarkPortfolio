@@ -496,6 +496,22 @@
                     <a aria-label="Dhanush C" class="tr__cursor__hoverable animated-name-link" href="/"></a>
                 </div>
                 <div class="tr__header__right">
+                    <!-- Hire Me Button (separate from menu trigger) -->
+                    <a href="/hire" class="hire-me-btn tr__cursor__hoverable" title="Hire Me" style="
+                        background: rgba(197, 252, 252, 0.1);
+                        color: #c5fcfc;
+                        padding: 8px 16px;
+                        border-radius: 20px;
+                        font-weight: normal;
+                        font-size: 14px;
+                        text-decoration: none;
+                        margin-right: 12px;
+                        transition: all 0.3s ease;
+                        border: 1.5px solid rgba(197, 252, 252, 0.4);
+                        box-shadow: 0 2px 10px rgba(197, 252, 252, 0.1);
+                        backdrop-filter: blur(10px);
+                    ">Hire Me</a>
+                    
                     <div class="tr__cursor__hoverable flex items-center gap-2" id="menu-trigger">
                         <!-- Theme toggle -->
                         <div class="w-8 h-8 cursor-pointer flex justify-center items-center theme-toggle" title="Toggle Theme" style="display: none;">
@@ -525,6 +541,7 @@
                 <a href="/designs" class="tr__cursor__hoverable">Designs</a>
                 <a href="/about" class="tr__cursor__hoverable">About</a>
                 <a href="/contact" class="tr__cursor__hoverable">Contact</a>
+                <a href="/hire" class="tr__cursor__hoverable">Hire Me</a>
             </div>
         </nav>
 
@@ -547,6 +564,22 @@
                 background: rgba(197, 252, 252, 0.3) !important;
                 color: #c5fcfc;
                 box-shadow: 0 0 10px rgba(197, 252, 252, 0.4);
+            }
+
+            /* Hire Me Button styling */
+            .hire-me-btn:hover {
+                transform: translateY(-2px) scale(1.05) !important;
+                box-shadow: 0 5px 20px rgba(197, 252, 252, 0.3) !important;
+                background: rgba(197, 252, 252, 0.2) !important;
+                border-color: rgba(197, 252, 252, 0.7) !important;
+                color: #ffffff !important;
+            }
+
+            /* Header alignment fix */
+            .tr__header__right {
+                display: flex !important;
+                align-items: center !important;
+                gap: 0.75rem !important;
             }
 
             /* Nav panel */
@@ -834,6 +867,7 @@
                         <a class="tr__social__item" aria-label="GitHub" href="https://github.com/Dhanushc22" target="_blank" rel="noreferrer"><div class="tr__fadeUp w-full flex justify-between items-center"><h2>GitHub</h2><span aria-hidden="true" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#0d1117] shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#c5fcfc" width="24" height="24"><path fill-rule="evenodd" d="M12 .5C5.649.5.5 5.648.5 12c0 5.095 3.292 9.408 7.864 10.94.575.105.786-.249.786-.555 0-.273-.01-1.183-.015-2.146-3.2.695-3.876-1.36-3.876-1.36-.523-1.33-1.277-1.685-1.277-1.685-1.043-.714.079-.699.079-.699 1.152.081 1.758 1.183 1.758 1.183 1.026 1.757 2.693 1.25 3.35.956.104-.743.401-1.251.73-1.54-2.554-.291-5.237-1.277-5.237-5.683 0-1.256.449-2.283 1.184-3.087-.119-.291-.513-1.466.113-3.056 0 0 .965-.309 3.162 1.18a11.03 11.03 0 0 1 2.878-.387c.976.004 1.959.132 2.878.387 2.196-1.488 3.159-1.18 3.159-1.18.628 1.59.234 2.765.115 3.056.737.804 1.183 1.831 1.183 3.087 0 4.418-2.688 5.387-5.253 5.673.412.355.78 1.057.78 2.131 0 1.537-.014 2.777-.014 3.154 0 .309.208.667.792.554C20.213 21.405 23.5 17.094 23.5 12 23.5 5.648 18.352.5 12 .5Z" clip-rule="evenodd"/></svg></span></div><div class="tr__fadeUp h-8 w-full"><div class="line tr__container mt-8"></div></div></a>
                         <a class="tr__social__item" aria-label="LinkedIn" href="https://linkedin.com/in/dhanushc22" target="_blank" rel="noreferrer"><div class="tr__fadeUp w-full flex justify-between items-center"><h2>LinkedIn</h2><span aria-hidden="true" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#0a66c2] shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#c5fcfc" width="24" height="24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.85-3.037-1.85 0-2.133 1.445-2.133 2.939v5.667H9.356V9h3.414v1.561h.048c.476-.9 1.637-1.85 3.37-1.85 3.604 0 4.27 2.372 4.27 5.458v6.283ZM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126Zm-1.778 13.02h3.556V9H3.559v11.453Z"/></svg></span></div><div class="tr__fadeUp h-8 w-full"><div class="line tr__container mt-8"></div></div></a>
                         <a class="tr__social__item" aria-label="Portfolio" href="https://dhanushc22.github.io/Dhanushc22-portfolio/" target="_blank" rel="noreferrer"><div class="tr__fadeUp w-full flex justify-between items-center"><h2>Portfolio</h2><span aria-hidden="true" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#5c5cff] shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#c5fcfc" width="24" height="24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-13Zm1.75 1.75v9.5h12.5v-9.5h-12.5Zm10 1.25a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1 0-1.5h6.5Zm0 3a.75.75 0 0 1 0 1.5h-6.5a.75.75 0 0 1 0-1.5h6.5Zm-8.5-3.75a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm0 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm0 3.75a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg></span></div><div class="tr__fadeUp h-8 w-full"><div class="line tr__container mt-8"></div></div></a>
+                        <a class="tr__social__item" aria-label="Freelance Site" href="https://purple-portfolio-mu.vercel.app/" target="_blank" rel="noreferrer"><div class="tr__fadeUp w-full flex justify-between items-center"><h2>Freelance</h2><span aria-hidden="true" class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#8b5cf6] shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#c5fcfc" width="24" height="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></span></div><div class="tr__fadeUp h-8 w-full"><div class="line tr__container mt-8"></div></div></a>
                     </div>
                 </section>
 
